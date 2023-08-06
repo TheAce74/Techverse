@@ -2,7 +2,7 @@
 
 Welcome to the Techverse Conference Website!
 
-![Techverse Logo](./client/src/assets/logo.svg)
+![Techverse Logo](./client/src/assets/images/logo.png)
 
 ## Table of Contents
 
