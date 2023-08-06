@@ -62,7 +62,7 @@ yarn
 yarn dev
 ```
 
-2. Open your preferred web browser and visit `http://localhost:3000` or `http://127.0.0.1:5173` to access the Techverse Conference Website.
+2. Open your preferred web browser and visit `http://localhost:3000` to access the Techverse Conference Website.
 
 ## Contributing
 
