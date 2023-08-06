@@ -8,3 +8,11 @@
   white-space: nowrap;
   width: 1px;
 }
+
+:root {
+  --clr-primary-400: hsl(203, 100%, 43%);
+  --clr-secondary-400: hsl(284, 88%, 32%);
+  --clr-accent-400: hsl(47, 100%, 53%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 22%);
+}
