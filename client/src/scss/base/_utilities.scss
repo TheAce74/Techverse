@@ -13,6 +13,25 @@
   --clr-primary-400: hsl(203, 100%, 43%);
   --clr-secondary-400: hsl(284, 88%, 32%);
   --clr-accent-400: hsl(47, 100%, 53%);
+  --clr-accent-500: hsl(43, 79%, 26%);
   --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 52%, 8%);
+  --clr-neutral-300: hsl(0, 0%, 73%);
   --clr-neutral-900: hsl(0, 0%, 22%);
+}
+
+%button {
+  cursor: pointer;
+  border: none;
+}
+
+%link {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
 }

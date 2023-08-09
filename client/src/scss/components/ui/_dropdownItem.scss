@@ -1,0 +1,20 @@
+@use "../../base" as *;
+
+.option {
+  @extend %button;
+  @extend .flex;
+  width: 100%;
+  padding: 0.3em 0.8em;
+
+  &:last-child {
+    border-radius: 0 0 0.4em 0.4em;
+  }
+
+  .icon {
+    fill: var(--clr-neutral-900);
+  }
+}
+
+.option:is(:hover, :focus-visible) {
+  background-color: var(--clr-neutral-300);
+}
