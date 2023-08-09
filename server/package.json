@@ -1,7 +1,7 @@
 {
-  "name": "YoTalk",
+  "name": "Techverse server",
   "version": "1.0.0",
-  "description": "Social platform for talking drummers",
+  "description": "tech conference server",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
