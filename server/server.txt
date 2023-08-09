@@ -1,2 +1,0 @@
-You can delete this file once you start working
-git doesn't push empty directories

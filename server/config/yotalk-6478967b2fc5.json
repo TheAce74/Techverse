@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "yotalk",
+  "private_key_id": "6478967b2fc558709a003914d0a3b74c5118ecd8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5X8S0CqYnKMgy\nu0DEzaFQttnUa1jQXfHcsOYjSUo4voJUW3dmSF89dgzqFJfqB4ytl6WOHCSEZz5x\n01YlPn13/VeDd8Ax6zyocR5IsTBVl6L/D0QXVuN/aDDNpzOHwGo25lajyFksTNDF\nP0lgqjb8mfq0dA2m7Q2ZfbPFdV3satZf3TdNc2790q6nJ6Rd/qtKnDjPe93L8zBR\nc7jC9B2lN/HqFouQVx3X5vitO+cQLUfQmAZNJx38lmt0wl3rc7IH31nybqAl9ItL\nN+FRKfo1t+FL+n8bfzVoQylHrb8oq+yQfe8igMtftpOTbH35w9T0IKZov07+5ctB\n7yyxEEFvAgMBAAECggEAAMkPa/Uw7QY24ELQ1xnz7q6c+lHAx5Pjpsa3wuXYQv3z\npBMwd1DOg9PQjDFYJMKxbY7bQbXhew92QUSJnztw4VBDzafKkFY/JIuOJaAH5LpG\nvi6SCvNFoCWQh16HplyXVpzf4xkXNPaCWpjrtlV3ntcG1pA4pUC93QJI/7OBRAjR\n+3xm9bNPJFhmzdnVhDRi7vuKpNQ2otepxxsL1/DC89b1/Tr+7RPPqHWKfMeEnelY\n8BSZrayuXONNH/fWoj+vdd5N6mLGwLtZozBHCQe9YQPpuI8MT/TKj7E3TDhNjz1J\nzRXs6G9hTnnUOA8XuQATSMxbqdXiV8Pk3M9D9FiR0QKBgQD5WNhYgqmj+1GdKNdn\nDijeQeOBctt8Sp8hg6zrEOmLv7EdMTAeNkNaDOPpn+Ndm+EOvmyz7gcAzG/DEPGP\nU7nAyLCL6kQO/hXZYjvQlYpD+55EfB0svsiS101OQgQerkfPChef6qqPfIKgKUY0\nbVNP0p65zXO7IjnleWXuC9Sf1wKBgQC+UfVmiMXxb7eiUSnK87pSYRmPYCN8f4QL\nBZB0RtenKYZfw1zo1ATzLclU05BpZ2xSzIaC+4dXDgpfTlY+r2c7uRl9zIW2y5P7\nem1C2aRAcNd5V5tduqiivDDe7Dcy4N6zJ2G0nBDdDrfEMLM+F4kml4q34D7QHP2u\nbl9b5F2YKQKBgDVzr0UiFX2apX88PxjPd0FV/JBGb/iwAnbrxEjL4lTb7frlDXyc\ng0mtk7oEVXg+rzs65RCZSRUJvjehzTa9aweBvh7wRFC2dTaZkVsAg5hZOy9RL+vk\nphicYO0Sx9FP6QLgFfppEtEZjuMIlg0tFnv5GZ+ZBGMsTh78LDaggJ8XAoGAVUg2\nld6eDGVKPULvXlE+4aE/Kd8jp6sgSSwSIfiItBBIdWr+nBo9qZaPzCINaR3+DVA2\nykTZzamt/i0FOouwz7NO9+8Iz/ODeUHP6g/KqVGnTGl0Zli5Lkrz/0CML5FSWadB\nAgSZDeWFdTV5bE5xl8h6UZD7tJf5GQu+UVgQlJkCgYA+ZtFiz/gUrl76rCbnEjZt\ncOhV0/BEjfPNe6luCv+Lp8qr1tN5NOYZkbXbDYrdnES//XsEgHGrBI+INkYuy3qB\nol+g2EAp/p/W5sxH746ZeWi6ZjIaZ0xbVA58k5kzT5ohARfCIAJ/Tmav2VIUDyI5\nqdt+12fyqoEu9yPcM48H2Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "yotalk@yotalk.iam.gserviceaccount.com",
+  "client_id": "103151980281988512337",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/yotalk%40yotalk.iam.gserviceaccount.com"
+}
