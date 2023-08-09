@@ -1,5 +1,5 @@
 {
-  "name": "Techverse server",
+  "name": "techverse-server",
   "version": "1.0.0",
   "description": "tech conference server",
   "main": "index.js",

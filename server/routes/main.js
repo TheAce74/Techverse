@@ -21,6 +21,10 @@ const storage = new GridFsStorage({
 });
 const upload = multer({ storage });
 
+// home
+router.get("/",(req,res)=>{res.send("Welcome to Techverse Server 🚀 ... There's nothing here tho, suprised?")}) ;
+
+
 //Register User
 router.post("/register", controller.register);
 
