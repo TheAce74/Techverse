@@ -1,0 +1,29 @@
+@use "../../base" as *;
+
+.button {
+  @extend %button;
+  --color: var(--clr-primary-400);
+  background-color: var(--color);
+  color: var(--clr-neutral-100);
+  border: 2px solid var(--color);
+  border-radius: 0.2em;
+  padding: .2em .8em;
+  transition: all .3s;
+
+  &:is(:hover, :focus-visible) {
+    background-color: transparent;
+    color: var(--color);
+  }
+
+  &[data-color="secondary"] {
+    --color: var(--clr-secondary-400);
+  }
+
+  &[data-color="accent"] {
+    --color: var(--clr-accent-400);
+  }
+
+  &[data-rounded="false"] {
+    border-radius: 0 0.3em 0.3em 0;
+  }
+}

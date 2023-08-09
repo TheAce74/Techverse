@@ -1,0 +1,45 @@
+@use "../../base" as *;
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  width: 15em;
+  text-align: center;
+}
+
+.selected-option {
+  @extend .flex;
+  padding: 0.3em 0.8em;
+  border: 1px solid var(--clr-neutral-900);
+  cursor: pointer;
+  width: 100%;
+
+  .arrow {
+    fill: var(--clr-neutral-900);
+
+    &[data-fill="primary"] {
+      fill: var(--clr-primary-400);
+    }
+  }
+}
+
+.options {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 0fr;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 0.4em 0.4em;
+  transition: grid-template-rows 0.3s, border 0.3s;
+
+  &--shown {
+    grid-template-rows: 1fr;
+    border: 1px solid var(--clr-neutral-900);
+    border-top: none;
+  }
+
+  .wrapper {
+    overflow: hidden;
+  }
+}
