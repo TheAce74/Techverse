@@ -9,7 +9,7 @@ function Countdown() {
 
   return (
     <section className="countdown">
-      <p>
+      <p aria-label="event date">
         <span>26th August, 2023</span>
         <span></span>
       </p>

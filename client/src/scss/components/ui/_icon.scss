@@ -1,0 +1,33 @@
+.icon {
+  &[data-fill="primary-400"] {
+    fill: var(--clr-primary-400) !important;
+  }
+
+  &[data-fill="secondary-400"] {
+    fill: var(--clr-secondary-400) !important;
+  }
+
+  &[data-fill="accent-400"] {
+    fill: var(--clr-accent-400) !important;
+  }
+
+  &[data-fill="accent-500"] {
+    fill: var(--clr-accent-500) !important;
+  }
+
+  &[data-fill="neutral-100"] {
+    fill: var(--clr-neutral-100) !important;
+  }
+
+  &[data-fill="neutral-200"] {
+    fill: var(--clr-neutral-200) !important;
+  }
+
+  &[data-fill="neutral-300"] {
+    fill: var(--clr-neutral-300) !important;
+  }
+
+  &[data-fill="neutral-900"] {
+    fill: var(--clr-neutral-900) !important;
+  }
+}

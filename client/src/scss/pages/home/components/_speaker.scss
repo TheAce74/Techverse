@@ -1,0 +1,28 @@
+@use "../../../abstracts" as *;
+@use "../../../base" as *;
+
+.speaker--home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(em(300), 100%), 1fr));
+  gap: 1em;
+
+  & > div {
+    .image-wrapper {
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1.2;
+      border-radius: 0.4em;
+    }
+
+    h3 {
+      @extend .flex;
+      justify-content: flex-start;
+      width: max-content;
+      margin-inline: auto;
+    }
+
+    p {
+        margin-bottom: .5em;
+    }
+  }
+}
