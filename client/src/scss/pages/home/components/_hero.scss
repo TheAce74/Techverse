@@ -1,0 +1,47 @@
+@use "../../../abstracts" as *;
+@use "../../../base" as *;
+
+.hero {
+  @extend .flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5em;
+  color: var(--clr-neutral-100);
+  font-size: 1.5rem;
+  text-align: center;
+  padding-inline: 1.5em;
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - em(50));
+  overflow: hidden;
+  background-color: var(--clr-neutral-900);
+
+  h1,
+  p {
+    width: 70%;
+  }
+
+  h1 {
+    line-height: 1.2;
+
+    span {
+      color: var(--clr-accent-400);
+    }
+  }
+
+  video {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include max(medium) {
+    h1,
+    p {
+      width: 95%;
+    }
+  }
+}

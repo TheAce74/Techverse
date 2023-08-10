@@ -3,7 +3,7 @@
 
 .header {
   @extend .flex;
-  padding: 1em 2em;
+  padding: 1em 1.5em;
 
   .home-link {
     min-width: 6em;
@@ -53,9 +53,10 @@
       position: absolute;
       display: block;
       width: 0%;
-      bottom: 0;
+      bottom: -0.5em;
       left: 50%;
-      height: 0.1em;
+      height: 0.15em;
+      border-radius: 100vmax;
       background-color: var(--clr-secondary-400);
       transition: width 0.3s, left 0.3s;
     }
