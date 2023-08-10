@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 import Pricing from "./components/Pricing";
 import Speakers from "./components/Speakers";
+import Sponsors from "./components/Sponsors";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Countdown />
       <Speakers />
       <Pricing />
+      <Sponsors />
     </>
   );
 }

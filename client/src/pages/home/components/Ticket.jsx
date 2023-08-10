@@ -25,7 +25,7 @@ export default function Ticket({
         />
       </div>
       <div className="body">
-        <ul>
+        <ul aria-label="benefits">
           {content.map(({ id, text }) => (
             <li key={id}>{text}</li>
           ))}
