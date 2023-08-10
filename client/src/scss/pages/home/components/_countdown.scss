@@ -1,0 +1,71 @@
+@use "../../../abstracts" as *;
+@use "../../../base" as *;
+
+.countdown {
+  @extend .flex;
+  justify-content: flex-start;
+  gap: 2em;
+  padding: 1.5em;
+  color: var(--clr-neutral-100);
+  height: 50dvh;
+  --s: 200px; /* control the size */
+  --c1: hsl(284, 88%, 32%);
+  --c2: hsl(284, 90%, 52%);
+  --c3: hsl(284, 88%, 45%);
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+
+  p {
+    flex: 0.3;
+
+    span:first-child {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    span:last-child {
+      display: inline-block;
+      width: 4em;
+      height: 0.5em;
+      border-radius: 100vmax;
+      background-color: var(--clr-accent-400);
+      margin-left: 1em;
+      translate: 0 -50%;
+    }
+  }
+
+  div {
+    text-align: center;
+    flex: 1;
+
+    h2 {
+      color: var(--clr-accent-400);
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 2.2rem;
+    }
+  }
+
+  @include max(medium) {
+    p {
+      span:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

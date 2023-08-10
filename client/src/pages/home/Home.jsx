@@ -1,3 +1,4 @@
+import Countdown from "./components/Countdown";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 
@@ -6,6 +7,7 @@ function Home() {
     <>
       <Hero />
       <Intro />
+      <Countdown />
     </>
   );
 }
