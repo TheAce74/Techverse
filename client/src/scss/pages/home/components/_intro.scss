@@ -1,0 +1,30 @@
+@use "../../../abstracts" as *;
+@use "../../../base" as *;
+
+.intro {
+  @extend .flex;
+  min-height: 100dvh;
+  padding: 1.5em;
+
+  div {
+    h2 {
+      font-size: 2rem;
+      color: var(--clr-primary-400);
+      margin-bottom: 0.5em;
+    }
+
+    p:first-of-type {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  img {
+    width: 40%;
+  }
+
+  @include max(medium) {
+    img {
+      display: none;
+    }
+  }
+}
