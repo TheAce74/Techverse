@@ -1,0 +1,113 @@
+@use "../../abstracts" as *;
+@use "../../base" as *;
+
+.header {
+  @extend .flex;
+  padding: 1em 2em;
+
+  .home-link {
+    min-width: 6em;
+  }
+
+  .menu-button {
+    @extend %button;
+    background-color: var(--clr-secondary-400);
+    font-size: 2.5rem;
+    border: 1px solid var(--clr-secondary-400);
+    border-radius: 0.2em;
+    transition: background-color 0.3s;
+    z-index: 2;
+    display: none;
+
+    svg {
+      fill: var(--clr-neutral-100);
+      transition: fill 0.3s;
+    }
+
+    &:is(:hover, :focus-visible) {
+      background-color: transparent;
+
+      svg {
+        fill: var(--clr-secondary-400);
+      }
+    }
+
+    &--open {
+      svg {
+        fill: var(--clr-neutral-100) !important;
+      }
+    }
+  }
+
+  nav ul {
+    @extend .flex;
+    gap: 0em;
+  }
+
+  .nav-link {
+    @extend %link;
+    position: relative;
+    padding: 1em;
+
+    & span {
+      position: absolute;
+      display: block;
+      width: 0%;
+      bottom: 0;
+      left: 50%;
+      height: 0.1em;
+      background-color: var(--clr-secondary-400);
+      transition: width 0.3s, left 0.3s;
+    }
+
+    &:is(:hover, :focus-visible) span,
+    &--current span {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  @include max(medium) {
+    .register {
+      display: none;
+    }
+  }
+
+  @include max(small) {
+    padding: 1em;
+
+    .menu-button {
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      z-index: 1;
+      inset: 0 0 0 100%;
+      color: white;
+      background-color: var(--clr-secondary-400);
+      transition: inset 0.3s;
+
+      ul {
+        flex-direction: column;
+        justify-content: center;
+        gap: 3em;
+        height: 100%;
+        min-width: max-content;
+      }
+
+      &.open {
+        inset: 0 0 0 20%;
+      }
+    }
+
+    .nav-link {
+      transition: font-weight 0.3s;
+
+      &:is(:hover, :focus-visible),
+      &--current {
+        font-weight: bold;
+      }
+    }
+  }
+}

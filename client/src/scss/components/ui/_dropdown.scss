@@ -18,8 +18,8 @@
   .arrow {
     fill: var(--clr-neutral-900);
 
-    &[data-fill="primary"] {
-      fill: var(--clr-primary-400);
+    &[data-fill="secondary"] {
+      fill: var(--clr-secondary-400);
     }
   }
 }
