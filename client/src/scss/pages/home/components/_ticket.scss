@@ -1,0 +1,51 @@
+@use "../../../base" as *;
+
+.ticket {
+  font-size: 1rem;
+  background-color: var(--clr-neutral-200);
+  border-radius: 1em;
+  flex: 1;
+  flex-basis: max(20ch, 33.3% - 2em);
+  position: relative;
+
+  .head {
+    @extend .flex;
+    background-color: var(--clr-secondary-400);
+    color: var(--clr-neutral-100);
+    padding: 1em;
+    border-radius: 1em 1em 0 0;
+
+    h4 {
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+  }
+
+  &[data-color="primary"] .head {
+    background-color: var(--clr-primary-400);
+  }
+
+  &[data-color="accent"] .head {
+    background-color: var(--clr-accent-400);
+  }
+
+  .body {
+    width: 80%;
+    margin: 1em auto 2.2em auto;
+
+    li:not(:last-of-type) {
+      margin-bottom: 0.3em;
+    }
+
+    a {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 50%;
+      width: max-content;
+    }
+  }
+}
