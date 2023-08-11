@@ -4,6 +4,7 @@ import Intro from "./components/Intro";
 import Pricing from "./components/Pricing";
 import Speakers from "./components/Speakers";
 import Sponsors from "./components/Sponsors";
+import Testimonials from "./components/Testimonials";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <Speakers />
       <Pricing />
       <Sponsors />
+      <Testimonials />
     </>
   );
 }

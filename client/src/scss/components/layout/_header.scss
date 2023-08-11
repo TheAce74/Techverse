@@ -4,6 +4,11 @@
 .header {
   @extend .flex;
   padding: 1em 1.5em;
+  position: sticky;
+  top: 0;
+  background-color: var(--clr-neutral-100);
+  z-index: 3;
+  box-shadow: 0 0 2px var(--clr-neutral-900);
 
   .home-link {
     min-width: 6em;
@@ -82,7 +87,7 @@
     }
 
     nav {
-      position: absolute;
+      position: fixed;
       z-index: 1;
       inset: 0 0 0 100%;
       color: white;
