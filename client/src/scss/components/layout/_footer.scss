@@ -9,7 +9,7 @@
     @extend .flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 2em;
+    gap: 3.5em;
 
     div:first-child *,
     div:last-of-type h2 {
@@ -17,7 +17,7 @@
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
 
     div:first-child a {
