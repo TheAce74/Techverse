@@ -15,7 +15,14 @@ function Hero() {
       <Link to="/signup">
         <Button>Register Now</Button>
       </Link>
-      <video src={video} loop autoPlay aria-hidden="true"></video>
+      <video
+        src={video}
+        loop
+        autoPlay
+        muted
+        playsInline
+        aria-hidden="true"
+      ></video>
     </section>
   );
 }
