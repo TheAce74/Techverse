@@ -1,0 +1,57 @@
+@use "../../base" as *;
+
+.footer {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+  padding: 1.5rem;
+
+  .wrapper {
+    @extend .flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2em;
+
+    div:first-child *,
+    div:last-of-type h2 {
+      margin-bottom: 0.3em;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    div:first-child a {
+      @extend %link;
+      transition: font-weight 0.3s;
+
+      &:is(:hover, :focus-visible) {
+        font-weight: bold;
+      }
+    }
+
+    div:last-of-type {
+      flex: 0.8;
+      text-align: center;
+
+      ul {
+        @extend .flex;
+        font-size: 2.2rem;
+        gap: 0.5em;
+        justify-content: center;
+        margin-top: 0.5em;
+
+        a {
+          transition: color 0.3s;
+
+          &:is(:hover, :focus-visible) {
+            color: var(--clr-primary-400);
+          }
+        }
+      }
+    }
+  }
+
+  & > p {
+    text-align: center;
+  }
+}

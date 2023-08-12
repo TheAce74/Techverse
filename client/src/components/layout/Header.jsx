@@ -35,7 +35,7 @@ function Header() {
           <ul role="list">
             <li>
               <NavLink
-                to="about"
+                to="/about"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
@@ -46,7 +46,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                to="speakers"
+                to="/speakers"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
@@ -57,7 +57,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                to="contact"
+                to="/contact"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
@@ -68,7 +68,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                to="faq"
+                to="/faq"
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
@@ -80,7 +80,7 @@ function Header() {
           </ul>
         </nav>
       </ClickAwayListener>
-      <NavLink to="signup" className="register">
+      <NavLink to="/signup" className="register">
         <Button color="secondary">Get Ticket</Button>
       </NavLink>
     </header>

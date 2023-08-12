@@ -7,6 +7,7 @@ import Contact from "./pages/contact/Contact";
 import Faq from "./pages/faq/Faq";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
+import Footer from "./components/layout/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,6 +16,7 @@ function App() {
         <>
           <Header />
           <Outlet />
+          <Footer />
         </>
       ),
       children: [
