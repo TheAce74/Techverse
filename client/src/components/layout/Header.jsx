@@ -39,6 +39,7 @@ function Header() {
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
+                onClick={handleClickAway}
               >
                 About Us
                 <span></span>
@@ -50,6 +51,7 @@ function Header() {
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
+                onClick={handleClickAway}
               >
                 Speakers
                 <span></span>
@@ -61,6 +63,7 @@ function Header() {
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
+                onClick={handleClickAway}
               >
                 Contact Us
                 <span></span>
@@ -72,6 +75,7 @@ function Header() {
                 className={({ isActive }) =>
                   isActive ? "nav-link nav-link--current" : "nav-link"
                 }
+                onClick={handleClickAway}
               >
                 FAQ
                 <span></span>
