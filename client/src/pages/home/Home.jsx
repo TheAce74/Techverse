@@ -1,6 +1,7 @@
 import Countdown from "./components/Countdown";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
+import Location from "./components/Location";
 import Pricing from "./components/Pricing";
 import Speakers from "./components/Speakers";
 import Sponsors from "./components/Sponsors";
@@ -16,6 +17,7 @@ function Home() {
       <Pricing />
       <Sponsors />
       <Testimonials />
+      <Location />
     </>
   );
 }
