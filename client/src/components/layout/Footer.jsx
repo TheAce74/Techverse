@@ -66,7 +66,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <p>&copy; 2023 Traverse. All rights reserved</p>
+      <p>&copy; 2023 Techverse. All rights reserved</p>
     </footer>
   );
 }
