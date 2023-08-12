@@ -29,13 +29,21 @@ function getDate() {
   const date = new Date(2023, 7, 26);
   const current = new Date();
   const remainder = date - current;
-  const days = Math.floor(remainder / 8.64e7);
-  const hours = Math.floor((remainder - days * 8.64e7) / 3.6e6);
-  const mins = Math.floor(
-    (remainder - (days * 8.64e7 + hours * 3.6e6)) / 60000
+  const days = Math.max(Math.floor(remainder / 8.64e7), 0);
+  const hours = Math.max(Math.floor((remainder - days * 8.64e7) / 3.6e6), 0);
+  const mins = Math.max(
+    Math.floor((remainder - (days * 8.64e7 + hours * 3.6e6)) / 60000),
+    0
   );
-  const secs = Math.floor(
-    (remainder - (days * 8.64e7 + hours * 3.6e6 + mins * 60000)) / 1000
+  const secs = Math.max(
+    Math.floor(
+      (remainder - (days * 8.64e7 + hours * 3.6e6 + mins * 60000)) / 1000
+    )
   );
-  return { days: days, hours: hours, mins: mins, secs: secs };
+  return {
+    days: days,
+    hours: hours,
+    mins: mins,
+    secs: secs,
+  };
 }

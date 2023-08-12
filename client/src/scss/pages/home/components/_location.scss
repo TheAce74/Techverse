@@ -1,13 +1,43 @@
+@use "../../../abstracts" as *;
+@use "../../../base" as *;
+
 .location {
-  text-align: center;
   padding-top: 1.5em;
 
-  p {
-    margin-top: 1em;
+  .wrapper {
+    @extend .flex;
+    gap: 3em;
+    padding: 1.5em;
+
+    p {
+      margin-top: 1em;
+    }
+
+    img {
+      width: max(20em, 35%);
+    }
   }
 
   iframe {
     width: 100%;
     margin-top: 2em;
+  }
+
+  @include max(small) {
+    .wrapper {
+      flex-direction: column;
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      img {
+        width: 90%;
+      }
+    }
   }
 }

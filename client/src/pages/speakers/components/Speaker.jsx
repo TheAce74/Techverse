@@ -3,7 +3,7 @@ import Icon from "../../../components/ui/Icon";
 
 export default function Speaker({ name, position, imgUrl, text, person }) {
   return (
-    <div className="speaker" id={person}>
+    <section className="speaker" id={person}>
       <div>
         <div className="image-wrapper">
           <img src={imgUrl} alt="" />
@@ -20,6 +20,6 @@ export default function Speaker({ name, position, imgUrl, text, person }) {
         <p>{position}</p>
       </div>
       <p>{text}</p>
-    </div>
+    </section>
   );
 }
