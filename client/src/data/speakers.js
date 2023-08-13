@@ -18,7 +18,7 @@ const speakers = [
     position: "CEO, NITDA Labs (Conference Chairman)",
     imgUrl: amadi,
     person: "amadi",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Welcome to the speaker's page of Engr. Dr. Emmanuel C. Amadi, a distinguished expert who wears multiple hats with excellence. Holding a PhD and serving as a Senior Lecturer at the Federal University of Technology Owerri, Dr. Amadi's passion for academia shines through his dedication to nurturing young minds. Beyond the classroom, he's also an accomplished professional web developer, seamlessly weaving his technical prowess into the digital landscape. Dr. Amadi's journey embodies a harmonious blend of education and innovation. With his extensive academic background, he brings a depth of knowledge to his role as a Senior Lecturer, inspiring the next generation of engineers. Simultaneously, his skills as a professional web developer underscore his practical approach to technology, as he crafts captivating and functional web experiences. Join him in exploring the synergy between education and technology, where academic wisdom meets cutting-edge web solutions.",
     id: 1,
   },
   {
@@ -42,7 +42,7 @@ const speakers = [
     position: "Full Stack Developer",
     imgUrl: victor,
     person: "victor",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Iloenyenwa Victor is a remarkable backend developer and a dedicated student at the Federal University of Technology Owerri. With a passion for code and a curiosity for innovation, he seamlessly blends his academic pursuits with his technical expertise. As a backend developer, Iloenyenwa has mastered the art of constructing the digital infrastructure that powers applications and websites. His talks delve into the intricate world of backend development, shedding light on complex concepts and illustrating their real-world applications. With a commitment to continuous learning, Iloenyenwa remains at the forefront of technological advancements, bringing fresh insights to the ever-evolving field. If you're seeking a speaker who can unravel the intricacies of backend development while inspiring the next generation of tech enthusiasts, Iloenyenwa Victor is the perfect choice. Join Iloenyenwa on a journey that bridges the gap between academia and industry, and explore the boundless possibilities of backend development. Contact us to book Iloenyenwa Victor for your next event and embark on an enlightening and inspiring experience.",
     id: 4,
   },
   {
