@@ -9,6 +9,7 @@ import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Footer from "./components/layout/Footer";
 import { AnimatePresence } from "framer-motion";
+import { ScrollToTop } from "./utils/ScrollToTop";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,6 +21,7 @@ function App() {
             <Outlet />
           </AnimatePresence>
           <Footer />
+          <ScrollToTop />
         </>
       ),
       children: [
