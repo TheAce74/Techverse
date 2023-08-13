@@ -34,7 +34,9 @@ function Footer() {
             <li>
               <a
                 href="https://github.com/TheAce74/Techverse"
+                target="_blank"
                 aria-label="github"
+                rel="noreferrer"
               >
                 <BsGithub />
               </a>
@@ -42,7 +44,9 @@ function Footer() {
             <li>
               <a
                 href="https://www.instagram.com/asor_christopher/"
+                target="_blank"
                 aria-label="instagram"
+                rel="noreferrer"
               >
                 <TiSocialInstagram />
               </a>
@@ -50,7 +54,9 @@ function Footer() {
             <li>
               <a
                 href="https://twitter.com/shadowbytee?s=20"
+                target="_blank"
                 aria-label="twitter"
+                rel="noreferrer"
               >
                 <BsTwitter />
               </a>
@@ -58,7 +64,9 @@ function Footer() {
             <li>
               <a
                 href="https://www.linkedin.com/in/chisom-udonsi-45196b216/"
+                target="_blank"
                 aria-label="linkedin"
+                rel="noreferrer"
               >
                 <BsLinkedin />
               </a>

@@ -2,7 +2,7 @@
 @use "../../../base" as *;
 
 .location {
-  padding-top: 1.5em;
+  padding-block: 3em;
 
   .wrapper {
     @extend .flex;
@@ -15,6 +15,7 @@
 
     img {
       width: max(20em, 35%);
+      background-color: var(--clr-neutral-900);
     }
   }
 

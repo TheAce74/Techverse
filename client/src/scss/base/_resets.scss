@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1em;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;

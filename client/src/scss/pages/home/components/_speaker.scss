@@ -12,6 +12,7 @@
       width: 100%;
       aspect-ratio: 1.2;
       border-radius: 0.4em;
+      margin-bottom: 1em;
     }
 
     h3 {
@@ -22,7 +23,11 @@
     }
 
     p {
-        margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
+  }
+
+  @include max(small) {
+    gap: 3em;
   }
 }

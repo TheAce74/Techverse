@@ -2,7 +2,7 @@
 @use "../../../base" as *;
 
 .pricing {
-  padding: 1.5em;
+  padding: 3em 1.5em;
   @extend .flex;
   justify-content: flex-start;
   gap: 3em;

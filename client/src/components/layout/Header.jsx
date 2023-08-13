@@ -14,18 +14,18 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <NavLink to="/" className="home-link">
-        <img src={logo} alt="Go to home" title="Go to home" />
-      </NavLink>
-      <button
-        aria-controls="primary-menu"
-        className={openMenu ? "menu-button menu-button--open" : "menu-button"}
-        onClick={() => setOpenMenu(!openMenu)}
-      >
-        {openMenu ? <IoMdClose /> : <RiMenu3Fill />}
-      </button>
-      <ClickAwayListener onClickAway={handleClickAway}>
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <header className="header">
+        <NavLink to="/" className="home-link">
+          <img src={logo} alt="Go to home" title="Go to home" />
+        </NavLink>
+        <button
+          aria-controls="primary-menu"
+          className={openMenu ? "menu-button menu-button--open" : "menu-button"}
+          onClick={() => setOpenMenu(!openMenu)}
+        >
+          {openMenu ? <IoMdClose /> : <RiMenu3Fill />}
+        </button>
         <nav
           aria-label="primary navigation"
           id="primary-menu"
@@ -83,11 +83,11 @@ function Header() {
             </li>
           </ul>
         </nav>
-      </ClickAwayListener>
-      <NavLink to="/signup" className="register">
-        <Button color="secondary">Get Ticket</Button>
-      </NavLink>
-    </header>
+        <NavLink to="/signup" className="register">
+          <Button color="secondary">Get Ticket</Button>
+        </NavLink>
+      </header>
+    </ClickAwayListener>
   );
 }
 export default Header;
