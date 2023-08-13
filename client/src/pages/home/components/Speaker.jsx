@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import Button from "../../../components/ui/Button";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import Icon from "../../../components/ui/Icon";
@@ -19,9 +19,9 @@ export default function Speaker({ name, position, imgUrl, speakerUrl }) {
         <span>{name}</span>
       </h3>
       <p>{position}</p>
-      <Link to={speakerUrl}>
+      <HashLink to={speakerUrl}>
         <Button color="secondary">View Profile</Button>
-      </Link>
+      </HashLink>
     </div>
   );
 }
