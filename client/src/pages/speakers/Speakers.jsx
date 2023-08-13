@@ -17,7 +17,7 @@ function Speakers() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
         >
-          <h1>Get to know our amazing speakers</h1>
+          <h1>Get to know our amazing speakers and organizers</h1>
           {speakers.map(({ name, position, imgUrl, id, text, person }) => (
             <Speaker
               key={id}

@@ -4,7 +4,7 @@ import { speakers } from "../../../data/speakersHome";
 function Speakers() {
   return (
     <section className="speakers--home">
-      <h2>Meet Our Esteemed Organizers/Speakers</h2>
+      <h2>Meet Our Esteemed Speakers</h2>
       <div className="speaker--home">
         {speakers.map(({ name, position, imgUrl, id, speakerUrl }) => (
           <Speaker
