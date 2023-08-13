@@ -16,22 +16,18 @@
 
   .menu-button {
     @extend %button;
-    background-color: var(--clr-secondary-400);
+    background-color: transparent;
     font-size: 2.5rem;
-    border: 1px solid var(--clr-secondary-400);
     border-radius: 0.2em;
-    transition: background-color 0.3s;
     z-index: 2;
     display: none;
 
     svg {
-      fill: var(--clr-neutral-100);
+      fill: var(--clr-neutral-900);
       transition: fill 0.3s;
     }
 
     &:is(:hover, :focus-visible) {
-      background-color: transparent;
-
       svg {
         fill: var(--clr-secondary-400);
       }
