@@ -1,0 +1,28 @@
+.faq {
+  padding: 2em 1.5em;
+  min-height: 70dvh;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .faq-body {
+    .faq-row {
+      background-color: var(--clr-secondary-400);
+      border: none;
+      margin-bottom: 1em;
+      padding-inline: 1em;
+      border-radius: 0.4em;
+
+      .row-title {
+        .row-title-text {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .icon-wrapper {
+      font-size: 1.4rem;
+    }
+  }
+}

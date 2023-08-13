@@ -4,7 +4,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Speakers from "./pages/speakers/Speakers";
 import Contact from "./pages/contact/Contact";
-import Faq from "./pages/faq/Faq";
+import FAQ from "./pages/faq/Faq";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Footer from "./components/layout/Footer";
@@ -43,7 +43,7 @@ function App() {
         },
         {
           path: "/faq",
-          element: <Faq />,
+          element: <FAQ />,
         },
         {
           path: "/signup",
