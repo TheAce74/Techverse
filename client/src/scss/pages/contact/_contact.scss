@@ -1,0 +1,30 @@
+.contact {
+  padding: 2em 1.5em;
+
+  h1 {
+    margin-bottom: 1em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  form {
+    box-shadow: 0 0 4px var(--clr-neutral-300);
+    border-radius: 1em;
+    background-color: var(--clr-neutral-100);
+    padding: 2em;
+    width: max(40ch, 60%);
+    margin-inline: auto;
+    margin-bottom: 2em;
+
+    * {
+      display: block;
+      width: 100%;
+      resize: none;
+      padding: 0.5em 0.8em;
+    }
+
+    * + * {
+      margin-top: 1.6em;
+    }
+  }
+}
