@@ -6,12 +6,46 @@ import Button from "../../components/ui/Button";
 import { BiSolidUser } from "react-icons/bi";
 import { IoMdMail } from "react-icons/io";
 import { HiLockClosed } from "react-icons/hi";
+import { fetchData } from "../../utils/fetchData";
+import { useRef } from "react";
+import Swal from "sweetalert2";
 
 function Signup() {
   const location = useLocation();
 
+  const firstNameRef = useRef(null);
+  const lastNameRef = useRef(null);
+  const emailRef = useRef(null);
+  const password1Ref = useRef(null);
+  const password2Ref = useRef(null);
+
   const handleSubmit = event => {
     event.preventDefault();
+    if (password1Ref.current.value.length < 8) {
+      Swal.fire({
+        title: "Error!",
+        text: "Password too short",
+        icon: "error",
+        confirmButtonText: "Password must be at least 8 characters",
+        confirmButtonColor: "var(--clr-secondary-400)",
+      });
+    } else if (password1Ref.current.value !== password2Ref.current.value) {
+      Swal.fire({
+        title: "Error!",
+        text: "Password Mismatch",
+        icon: "error",
+        confirmButtonText: "Check passwords and try again",
+        confirmButtonColor: "var(--clr-secondary-400)",
+      });
+    } else {
+      fetchData("/register", "post", {
+        username: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
+        email: emailRef.current.value,
+        password: password1Ref.current.value,
+      }).then(data => {
+        console.log(data);
+      });
+    }
   };
 
   return (
@@ -35,12 +69,14 @@ function Signup() {
               required={true}
               rounded="right"
               icon={() => <BiSolidUser />}
+              ref={firstNameRef}
             />
             <FormInputHOC
               placeholder="Last name"
               required={true}
               rounded="right"
               icon={() => <BiSolidUser />}
+              ref={lastNameRef}
             />
             <FormInputHOC
               placeholder="Email address"
@@ -48,6 +84,7 @@ function Signup() {
               required={true}
               rounded="right"
               icon={() => <IoMdMail />}
+              ref={emailRef}
             />
             <FormInputHOC
               placeholder="Password"
@@ -55,6 +92,7 @@ function Signup() {
               required={true}
               rounded="right"
               icon={() => <HiLockClosed />}
+              ref={password1Ref}
             />
             <FormInputHOC
               placeholder="Confirm password"
@@ -62,9 +100,10 @@ function Signup() {
               required={true}
               rounded="right"
               icon={() => <HiLockClosed />}
+              ref={password2Ref}
             />
             <div className="policy">
-              <FormInput type="checkbox" id="policy" />
+              <FormInput type="checkbox" id="policy" required={true} />
               <label htmlFor="policy">
                 I agree to the <span>terms</span> and <span>conditions</span>
               </label>
