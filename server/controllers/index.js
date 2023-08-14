@@ -53,7 +53,7 @@ const defaultController = {
                 });
               } else {
                 res.json({ error: "This username is already in use" });
-                return
+                return;
               }
             })
             .catch((err) => {
@@ -76,7 +76,7 @@ const defaultController = {
       .then((user) => {
         if (user) {
           if (bcrypt.compareSync(req.body.password, user.password)) {
-            res.json({user},{ message: "Login Success" })
+            res.json({ user });
             return;
           } else {
             res.json({ error: "Password is incorrect" });
