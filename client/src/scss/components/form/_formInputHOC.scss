@@ -14,6 +14,23 @@
     background-color: var(--clr-neutral-300);
     font-size: 1.5rem;
     border-radius: 0.2em 0 0 0.2em;
-    padding: calc(0.2em + 2px) calc(0.8em + 2px);
+    padding: calc(0.2em + 2px) calc(0.6em + 2px);
+
+    svg {
+      min-width: 1em;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    @extend %button;
+    padding-inline: 0.8em;
+
+    svg {
+      min-width: 1em;
+    }
   }
 }

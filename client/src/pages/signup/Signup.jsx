@@ -10,6 +10,10 @@ import { HiLockClosed } from "react-icons/hi";
 function Signup() {
   const location = useLocation();
 
+  const handleSubmit = event => {
+    event.preventDefault();
+  };
+
   return (
     <>
       {location.pathname && (
@@ -25,7 +29,7 @@ function Signup() {
             Yahhh! we&apos;re glad to have you onboard, Please complete your
             registration
           </h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <FormInputHOC
               placeholder="First name"
               required={true}
@@ -59,7 +63,7 @@ function Signup() {
               rounded="right"
               icon={() => <HiLockClosed />}
             />
-            <div>
+            <div className="policy">
               <FormInput type="checkbox" id="policy" />
               <label htmlFor="policy">
                 I agree to the <span>terms</span> and <span>conditions</span>

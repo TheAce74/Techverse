@@ -1,5 +1,6 @@
+import { useState } from "react";
 import FormInput from "./FormInput";
-import { BsEyeFill } from "react-icons/bs";
+import { BsEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 export default function FormInputHOC({
   type,
@@ -8,16 +9,26 @@ export default function FormInputHOC({
   required,
   icon,
 }) {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="form-input-hoc">
       <span>{icon()}</span>
       <FormInput
-        type={type}
+        type={
+          type === "password" ? (!showPassword ? "password" : "text") : type
+        }
         placeholder={placeholder}
         rounded={rounded}
         required={required}
       />
-      {type === "password" ? <BsEyeFill /> : ""}
+      {type === "password" ? (
+        <button className="eye" onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? <BsFillEyeSlashFill /> : <BsEyeFill />}
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

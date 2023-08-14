@@ -10,6 +10,7 @@ import Login from "./pages/login/Login";
 import Footer from "./components/layout/Footer";
 import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "./utils/ScrollToTop";
+import ResetPassword from "./pages/resetpassword/ResetPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/resetpassword",
+          element: <ResetPassword />,
         },
       ],
     },
