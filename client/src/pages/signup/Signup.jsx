@@ -45,6 +45,7 @@ function Signup() {
       }).then(data => {
         console.log(data);
       });
+      event.target.reset();
     }
   };
 
