@@ -1,3 +1,5 @@
+@use "../../abstracts" as *;
+
 .contact {
   padding: 2em 1.5em;
 
@@ -25,6 +27,19 @@
 
     * + * {
       margin-top: 1.6em;
+    }
+  }
+
+  @include max(small) {
+    padding: 0.5em;
+
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    form {
+      box-shadow: none;
+      width: 100%;
     }
   }
 }

@@ -1,3 +1,4 @@
+@use "../../abstracts" as *;
 @use "../../base" as *;
 
 .signup {
@@ -27,7 +28,6 @@
     .policy {
       @extend .flex;
       justify-content: flex-start;
-      align-items: baseline;
 
       input {
         accent-color: var(--clr-secondary-400);
@@ -56,6 +56,29 @@
       &:is(:hover, :focus-visible) {
         color: var(--clr-primary-400);
       }
+    }
+  }
+
+  @include max(small) {
+    padding-inline: 0.1em;
+
+    h1 {
+      margin-bottom: 0.1em;
+    }
+
+    form {
+      width: 100%;
+      box-shadow: none;
+
+      .policy {
+        label {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
     }
   }
 }

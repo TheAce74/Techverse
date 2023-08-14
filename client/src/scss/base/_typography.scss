@@ -7,6 +7,12 @@ body {
   overflow-x: hidden;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
 html {
   @include max(small) {
     font-size: 14px;
