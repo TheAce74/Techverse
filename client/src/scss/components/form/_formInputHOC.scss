@@ -1,0 +1,19 @@
+@use "../../base" as *;
+
+.form-input-hoc {
+  @extend .flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  min-height: 3em;
+
+  span {
+    @extend .flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--clr-neutral-300);
+    font-size: 1.5rem;
+    border-radius: 0.2em 0 0 0.2em;
+    padding: calc(0.2em + 2px) calc(0.8em + 2px);
+  }
+}

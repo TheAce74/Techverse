@@ -1,4 +1,11 @@
-function FormInput({ type, placeholder, rounded, required, textarea }) {
+export default function FormInput({
+  type,
+  placeholder,
+  rounded,
+  required,
+  textarea,
+  id,
+}) {
   return (
     <>
       {!textarea ? (
@@ -8,6 +15,7 @@ function FormInput({ type, placeholder, rounded, required, textarea }) {
           className="form-input"
           data-rounded={rounded}
           required={required}
+          id={id}
         />
       ) : (
         <textarea
@@ -16,9 +24,9 @@ function FormInput({ type, placeholder, rounded, required, textarea }) {
           className="form-input"
           placeholder={placeholder}
           required={required}
+          id={id}
         ></textarea>
       )}
     </>
   );
 }
-export default FormInput;

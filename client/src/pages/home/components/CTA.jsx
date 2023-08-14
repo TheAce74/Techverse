@@ -12,7 +12,7 @@ function CTA() {
       <form onSubmit={handleSubmit}>
         <FormInput
           placeholder="Enter your email address"
-          rounded={false}
+          rounded="left"
           type="email"
           required={true}
         />

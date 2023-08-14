@@ -4,7 +4,11 @@
   border-radius: 0.4em;
   padding: calc(0.2em + 2px) calc(0.8em + 2px);
 
-  &[data-rounded="false"] {
-    border-radius: 0.4em 0 0 0.4em;
+  &[data-rounded="left"] {
+    border-radius: 0.2em 0 0 0.2em;
+  }
+
+  &[data-rounded="right"] {
+    border-radius: 0 0.2em 0.2em 0;
   }
 }
