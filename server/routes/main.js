@@ -31,7 +31,7 @@ router.post("/register", controller.register);
 //Login User
 router.post("/login", controller.login);
 router.post("/ticket", controller.ticket);
-router.post("/confirmation", controller.confirmation);
+router.post("/keepmeupdated", controller.confirmation);
 
 
 

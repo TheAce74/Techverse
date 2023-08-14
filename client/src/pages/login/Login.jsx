@@ -4,12 +4,30 @@ import FormInputHOC from "../../components/form/FormInputHOC";
 import Button from "../../components/ui/Button";
 import { IoMdMail } from "react-icons/io";
 import { HiLockClosed } from "react-icons/hi";
+import { fetchData } from "../../utils/fetchData";
+import { useRef } from "react";
 
 function Login() {
   const location = useLocation();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    fetchData("login", "post", {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    }).then((data) => {
+      console.log(data);
+      if (data.status === "success") {
+        // Navigate to profile page
+        // suggesting using local storage to track logged in users and store their username
+        // for every request to the backend like uploading picture and assigning ticket,the username is required to be sent along with the request
+      } else {
+        // throw error
+      }
+    });
+    event.target.reset();
   };
 
   return (
@@ -30,6 +48,7 @@ function Login() {
               type="email"
               required={true}
               rounded="right"
+              ref={emailRef}
               icon={() => <IoMdMail />}
             />
             <FormInputHOC
@@ -37,6 +56,7 @@ function Login() {
               type="password"
               required={true}
               rounded="right"
+              ref={passwordRef}
               icon={() => <HiLockClosed />}
             />
             <Button type="submit" color="secondary">

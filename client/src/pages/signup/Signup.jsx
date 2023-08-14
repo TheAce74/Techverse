@@ -12,7 +12,6 @@ import Swal from "sweetalert2";
 
 function Signup() {
   const location = useLocation();
-
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -38,12 +37,18 @@ function Signup() {
         confirmButtonColor: "var(--clr-secondary-400)",
       });
     } else {
-      fetchData("/register", "post", {
+      fetchData("register", "post", {
         username: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
         email: emailRef.current.value,
         password: password1Ref.current.value,
       }).then(data => {
         console.log(data);
+        if (data.status === "success") {
+         // Navigate to login page
+        } else {
+          // throw error
+        }
+
       });
       event.target.reset();
     }

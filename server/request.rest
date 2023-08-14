@@ -33,3 +33,41 @@ Content-Type: application/json
 {
     "email":"iloenyenwavictor@gmail.com"
 }
+
+###
+
+POST https://techverse-xqxz.onrender.com/register
+Content-Type: application/json
+
+{
+    "username": "theacex",
+    "email":"theacex@gmail.com",
+    "password": "theacex"
+}
+
+###
+POST https://techverse-xqxz.onrender.com/login
+Content-Type: application/json
+
+{
+    "email":"theace@gmail.com",
+    "password": "theace"
+}
+
+###
+POST https://techverse-xqxz.onrender.com/ticket
+Content-Type: application/json
+
+{
+    "username": "theace",
+    "ticket":"GOLD",
+    "seat_number": "12"
+}
+
+###
+POST https://techverse-xqxz.onrender.com/confirmation
+Content-Type: application/json
+
+{
+    "email":"iloenyenwavictor@gmail.com"
+}
