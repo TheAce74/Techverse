@@ -76,7 +76,7 @@ const defaultController = {
       .then((user) => {
         if (user) {
           if (bcrypt.compareSync(req.body.password, user.password)) {
-            res.json({user})
+            res.json({user},{ message: "Login Success" })
             return;
           } else {
             res.json({ error: "Password is incorrect" });
