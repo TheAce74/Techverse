@@ -21,7 +21,7 @@ function About() {
             Techverse Conference is an initiative among top visionary tech
             enthusiasts to great amazing conferences to help tech newbies
             navigate the tech space with ease and clarity. This would help them
-            have a more fulfilling experience and reduce thr time it&apos;ll
+            have a more fulfilling experience and reduce the time it&apos;ll
             take them to fully get integrated into tech. This cohorts conference
             is the ultimate gathering for tech enthusiasts, visionaries, and
             pioneers in the digital realm. With the subtheme &quot;Navigating
