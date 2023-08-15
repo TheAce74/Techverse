@@ -2,8 +2,8 @@ POST http://localhost:5000/register
 Content-Type: application/json
 
 {
-    "username": "theace",
-    "email":"theace@gmail.com",
+    "username": "theacexx",
+    "email":"theacexx@gmail.com",
     "password": "theace"
 }
 
@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/confirmation
+POST http://localhost:5000/keepmeupdated
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 ###
 
-POST https://techverse-xqxz.onrender.com/register
+POST https://techverse-v2.onrender.com/register
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ###
-POST https://techverse-xqxz.onrender.com/login
+POST https://techverse-v2.onrender.com/login
 Content-Type: application/json
 
 {
@@ -55,7 +55,7 @@ Content-Type: application/json
 }
 
 ###
-POST https://techverse-xqxz.onrender.com/ticket
+POST https://techverse-v2.onrender.com/ticket
 Content-Type: application/json
 
 {
@@ -65,7 +65,7 @@ Content-Type: application/json
 }
 
 ###
-POST https://techverse-xqxz.onrender.com/confirmation
+POST https://techverse-v2.onrender.com/keepmeupdated
 Content-Type: application/json
 
 {

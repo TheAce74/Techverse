@@ -1,4 +1,4 @@
 # Server Support for Techverse Conference
 Techverse Server
 
-Live @ https://techverse-xqxz.onrender.com/
+Live @ https://techverse-v2.onrender.com

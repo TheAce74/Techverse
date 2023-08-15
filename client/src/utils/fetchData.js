@@ -1,10 +1,10 @@
 import axios from "axios";
 
 //for local dev  http://localhost:5000/
-//for prod https://techverse-xqxz.onrender.com/
+//for prod https://techverse-v2.onrender.com/
 
 async function fetchData(url, method = "get", info) {
-  const baseUrl = "https://techverse-xqxz.onrender.com/";
+  const baseUrl = "https://techverse-v2.onrender.com/";
   let data;
   if (method === "get") {
     const response = await axios.get(`${baseUrl}${url}`);
