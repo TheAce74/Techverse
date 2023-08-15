@@ -7,15 +7,15 @@ import Swal from "sweetalert2";
 function CTA() {
   const emailRef = useRef(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     fetchData("keepmeupdated", "post", {
       email: emailRef.current.value,
-    }).then((data) => {
+    }).then(data => {
       if (data.message) {
         Swal.fire({
           title: "Success",
-          text: data.message,
+          text: "You've been subcribed",
           icon: "success",
           confirmButtonText: "Continue",
           confirmButtonColor: "var(--clr-secondary-400)",

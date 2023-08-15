@@ -10,7 +10,7 @@ function useAuthentication() {
 
   const signup = (url, method, info) => {
     setLoader(true);
-    fetchData(url, method, info).then((data) => {
+    fetchData(url, method, info).then(data => {
       setLoader(false);
       if (data.status === "success") {
         setUser(data.username);
@@ -18,7 +18,6 @@ function useAuthentication() {
         // Navigate to profile page or ticket page
         navigate("/");
       } else {
-        // throw error data.error contains the error message
         Swal.fire({
           title: "Signup Failed",
           text: data.error,
@@ -37,7 +36,7 @@ function useAuthentication() {
       setLoader(false);
       setUser(user);
     } else {
-      fetchData(url, method, info).then((data) => {
+      fetchData(url, method, info).then(data => {
         setLoader(false);
         if (data.user?.username) {
           setUser(data.user.username);
@@ -45,7 +44,6 @@ function useAuthentication() {
           // Navigate to profile page
           navigate("/");
         } else {
-          // throw error
           Swal.fire({
             title: "Login Failed",
             text: data.error,
@@ -59,7 +57,6 @@ function useAuthentication() {
   };
 
   const logout = () => {
-    //add logout request logic later
     removeData("user");
     setUser("");
   };
