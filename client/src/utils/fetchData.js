@@ -4,7 +4,7 @@ import axios from "axios";
 //for prod https://techverse-v2.onrender.com/
 
 async function fetchData(url, method = "get", info) {
-  const baseUrl = "http://localhost:5000/";
+  const baseUrl = "https://techverse-v2.onrender.com/";
   let data;
   if (method === "get") {
     const response = await axios.get(`${baseUrl}${url}`);
