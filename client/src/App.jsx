@@ -11,19 +11,20 @@ import Footer from "./components/layout/Footer";
 import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "./utils/ScrollToTop";
 import ResetPassword from "./pages/resetpassword/ResetPassword";
+import AppContextProvider from "./context/AppContext";
 
 function App() {
   const router = createBrowserRouter([
     {
       element: (
-        <>
+        <AppContextProvider>
           <Header />
           <AnimatePresence>
             <Outlet />
           </AnimatePresence>
           <Footer />
           <ScrollToTop />
-        </>
+        </AppContextProvider>
       ),
       children: [
         {

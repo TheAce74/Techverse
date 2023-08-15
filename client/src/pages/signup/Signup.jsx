@@ -6,9 +6,9 @@ import Button from "../../components/ui/Button";
 import { BiSolidUser } from "react-icons/bi";
 import { IoMdMail } from "react-icons/io";
 import { HiLockClosed } from "react-icons/hi";
-import { fetchData } from "../../utils/fetchData";
 import { useRef } from "react";
 import Swal from "sweetalert2";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 function Signup() {
   const location = useLocation();
@@ -17,8 +17,9 @@ function Signup() {
   const emailRef = useRef(null);
   const password1Ref = useRef(null);
   const password2Ref = useRef(null);
+  const { signup } = useAuthentication();
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (password1Ref.current.value.length < 8) {
       Swal.fire({
@@ -37,20 +38,11 @@ function Signup() {
         confirmButtonColor: "var(--clr-secondary-400)",
       });
     } else {
-      fetchData("register", "post", {
+      signup("register", "post", {
         username: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
         email: emailRef.current.value,
         password: password1Ref.current.value,
-      }).then(data => {
-        console.log(data);
-        if (data.status === "success") {
-         // Navigate to login page
-        } else {
-          // throw error
-        }
-
       });
-      event.target.reset();
     }
   };
 

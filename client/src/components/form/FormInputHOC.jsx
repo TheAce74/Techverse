@@ -22,6 +22,7 @@ const FormInputHOC = forwardRef(
           <button
             className="eye"
             onClick={() => setShowPassword(!showPassword)}
+            type="button"
           >
             {showPassword ? <BsFillEyeSlashFill /> : <BsEyeFill />}
           </button>
