@@ -39,7 +39,6 @@ function useAuthentication() {
     } else {
       fetchData(url, method, info).then((data) => {
         setLoader(false);
-        console.log(data);
         if (data.status === "success" || data.user.username) {
           setUser(data.username || data.user.username);
           setData("user", data.username || data.user.username);
