@@ -12,7 +12,7 @@ function useAuthentication() {
     setLoader(true);
     fetchData(url, method, info).then((data) => {
       setLoader(false);
-      if (data.status === "success" || data.status === "Logged In") {
+      if (data.status === "success") {
         setUser(data.username);
         setData("user", data.username);
         // Navigate to profile page or ticket page
@@ -39,9 +39,10 @@ function useAuthentication() {
     } else {
       fetchData(url, method, info).then((data) => {
         setLoader(false);
-        if (data.status === "success" || data.status === "Logged In") {
-          setUser(data.username);
-          setData("user", data.username);
+        console.log(data);
+        if (data.status === "success" || data.user.username) {
+          setUser(data.username || data.user.username);
+          setData("user", data.username || data.user.username);
           // Navigate to profile page
           navigate("/about");
         } else {
