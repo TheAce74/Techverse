@@ -33,6 +33,7 @@
 
   @include max(small) {
     div {
+      text-align: center;
       flex-direction: column;
     }
   }

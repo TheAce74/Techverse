@@ -124,7 +124,7 @@
 
       &--open ~ .user {
         color: var(--clr-neutral-100);
-        right: 45%;
+        right: 30%;
       }
     }
 
@@ -161,7 +161,7 @@
     .user {
       display: block;
       position: fixed;
-      top: 1em;
+      top: 0.8em;
       color: transparent;
       font-weight: 600;
       right: 20%;
