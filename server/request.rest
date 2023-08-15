@@ -8,6 +8,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST http://localhost:5000/login
 Content-Type: application/json
 
@@ -17,6 +18,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST http://localhost:5000/ticket
 Content-Type: application/json
 
@@ -27,6 +29,18 @@ Content-Type: application/json
 }
 
 ###
+
+POST http://localhost:5000/contact
+Content-Type: application/json
+
+{
+    "email": "theaxe@gmail.com",
+    "message":"Let's just cook",
+    "fullname": "Andrea Martinez"
+}
+
+###
+
 POST http://localhost:5000/keepmeupdated
 Content-Type: application/json
 
@@ -46,6 +60,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST https://techverse-v2.onrender.com/login
 Content-Type: application/json
 
@@ -55,6 +70,7 @@ Content-Type: application/json
 }
 
 ###
+
 POST https://techverse-v2.onrender.com/ticket
 Content-Type: application/json
 
@@ -65,9 +81,21 @@ Content-Type: application/json
 }
 
 ###
+
 POST https://techverse-v2.onrender.com/keepmeupdated
 Content-Type: application/json
 
 {
     "email":"iloenyenwavictor@gmail.com"
+}
+
+###
+
+POST https://techverse-v2.onrender.com/contact
+Content-Type: application/json
+
+{
+    "email": "theaxe@gmail.com",
+    "message":"Let's just cook",
+    "fullname": "Andrea Martinez"
 }

@@ -21,7 +21,7 @@ const storage = new GridFsStorage({
 });
 const upload = multer({ storage });
 
-// home
+//Home
 router.get("/",(req,res)=>{res.send("Welcome to Techverse Server 🚀 ... There's nothing here tho, suprised?")}) ;
 
 
@@ -32,6 +32,7 @@ router.post("/register", controller.register);
 router.post("/login", controller.login);
 router.post("/ticket", controller.ticket);
 router.post("/keepmeupdated", controller.confirmation);
+router.post("/contact", controller.contact);
 
 
 
