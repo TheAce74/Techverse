@@ -44,4 +44,8 @@
       width: 95%;
     }
   }
+
+  @include max(small) {
+    min-height: calc(100vh - em(38));
+  }
 }

@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import techverse from "../../assets/images/techverse.svg";
 import Button from "../ui/Button";
 import { IoMdClose } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
 import { useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
+import { useAppContext } from "../../context/AppContext";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -13,11 +14,24 @@ function Header() {
     setOpenMenu(false);
   };
 
+  const randomColor = () => {
+    const colors = [
+      "primary-400",
+      "secondary-400",
+      "accent-400",
+      "accent-500",
+      "neutral-900",
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
+  const { user } = useAppContext();
+
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <header className="header">
         <NavLink to="/" className="home-link">
-          <img src={logo} alt="Go to home" title="Go to home" />
+          <img src={techverse} alt="Go to home" title="Go to home" />
         </NavLink>
         <button
           aria-controls="primary-menu"
@@ -83,9 +97,18 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <NavLink to="/signup" className="register">
-          <Button color="secondary">Get Ticket</Button>
-        </NavLink>
+        {!user ? (
+          <NavLink to="/signup" className="register">
+            <Button color="secondary">Get Ticket</Button>
+          </NavLink>
+        ) : (
+          <div className="user">
+            <span aria-hidden="true" data-color={randomColor()}>
+              <span aria-hidden="true">{user[0]}</span>
+            </span>
+            <p>{user}</p>
+          </div>
+        )}
       </header>
     </ClickAwayListener>
   );

@@ -53,10 +53,10 @@ function Login() {
             <Button type="submit" color="secondary">
               Login
             </Button>
-            <p>
+            {/* <p>
               Forgot password?{" "}
               <Link to="/resetpassword">Reset your password</Link>
-            </p>
+            </p> */}
             <p>
               Not registered? <Link to="/signup">Register now</Link>
             </p>

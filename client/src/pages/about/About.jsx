@@ -1,9 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import { motion } from "framer-motion";
+import { useAppContext } from "../../context/AppContext";
 
 function About() {
   const location = useLocation();
+
+  const { user } = useAppContext();
 
   return (
     <>
@@ -42,9 +45,13 @@ function About() {
             Techverse offers a platform for networking, learning, and
             collaboration like no other.
           </p>
-          <Link to="/signup" className="register">
-            <Button color="secondary">Get Ticket</Button>
-          </Link>
+          {!user ? (
+            <Link to="/signup" className="register">
+              <Button color="secondary">Get Ticket</Button>
+            </Link>
+          ) : (
+            ""
+          )}
         </motion.section>
       )}
     </>

@@ -1,8 +1,10 @@
 import video from "../../../assets/videos/video.mp4";
 import Button from "../../../components/ui/Button";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../../context/AppContext";
 
 function Hero() {
+  const { user } = useAppContext();
   return (
     <section className="hero">
       <h1>
@@ -12,9 +14,13 @@ function Hero() {
         Explore and discover a limitless world filled with endless opportunities
         through the leveraging of new and exciting technologies
       </p>
-      <Link to="/signup">
-        <Button>Register Now</Button>
-      </Link>
+      {!user ? (
+        <Link to="/signup">
+          <Button>Register Now</Button>
+        </Link>
+      ) : (
+        ""
+      )}
       <video
         src={video}
         loop

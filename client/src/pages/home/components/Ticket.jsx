@@ -2,6 +2,7 @@ import Button from "../../../components/ui/Button";
 import Icon from "../../../components/ui/Icon";
 import { BsFillStarFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../../context/AppContext";
 
 export default function Ticket({
   type,
@@ -10,6 +11,8 @@ export default function Ticket({
   buttonColor,
   content,
 }) {
+  const { user } = useAppContext();
+
   return (
     <div className="ticket" data-color={buttonColor}>
       <div className="head">
@@ -30,9 +33,13 @@ export default function Ticket({
             <li key={id}>{text}</li>
           ))}
         </ul>
-        <Link to="/signup">
-          <Button color={buttonColor}>Buy ticket</Button>
-        </Link>
+        {!user ? (
+          <Link to="/signup">
+            <Button color={buttonColor}>Buy ticket</Button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

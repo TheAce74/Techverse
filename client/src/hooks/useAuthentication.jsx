@@ -16,7 +16,7 @@ function useAuthentication() {
         setUser(data.username);
         setData("user", data.username);
         // Navigate to profile page or ticket page
-        navigate("/about");
+        navigate("/");
       } else {
         // throw error data.error contains the error message
         Swal.fire({
@@ -39,11 +39,11 @@ function useAuthentication() {
     } else {
       fetchData(url, method, info).then((data) => {
         setLoader(false);
-        if (data.status === "success" || data.user.username) {
-          setUser(data.username || data.user.username);
-          setData("user", data.username || data.user.username);
+        if (data.user?.username) {
+          setUser(data.user.username);
+          setData("user", data.user.username);
           // Navigate to profile page
-          navigate("/about");
+          navigate("/");
         } else {
           // throw error
           Swal.fire({
@@ -60,8 +60,8 @@ function useAuthentication() {
 
   const logout = () => {
     //add logout request logic later
-    setUser("");
     removeData("user");
+    setUser("");
   };
 
   return { signup, login, logout };

@@ -50,7 +50,7 @@ const speakers = [
     position: "Frontend Developer",
     imgUrl: cj,
     person: "chinedu",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Passionate about crafting engaging digital experiences, Ukpai Ajike Chinedu is a dedicated frontend developer who transforms ideas into captivating user interfaces. With a keen eye for design and a knack for coding, Ukpai specializes in bringing websites to life through seamless interactions and pixel-perfect layouts.",
     id: 5,
   },
   {
@@ -58,7 +58,7 @@ const speakers = [
     position: "Content Writer",
     imgUrl: success,
     person: "success",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Words are Uwaoma Success Chiagoziem's playground, where creativity knows no bounds. As a skilled content writer, Uwaoma crafts compelling narratives that captivate readers and convey messages with finesse. Whether weaving stories or simplifying complex concepts, Uwaoma's words have the power to inform, entertain, and inspire.",
     id: 6,
   },
   {
@@ -66,15 +66,15 @@ const speakers = [
     position: "Product Designer",
     imgUrl: emeka,
     person: "emeka",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "A true visionary in the world of design, Nwokocha Christian Emeka crafts products that effortlessly blend form and function. With a deep understanding of user-centered design principles, Nwokocha creates intuitive and visually stunning experiences that redefine how we interact with technology, enhancing usability and aesthetic appeal.",
     id: 7,
   },
   {
     name: "Emeanuri Kennedy C.",
-    position: "Sofware Engineer",
+    position: "Software Engineer",
     imgUrl: kennedy,
     person: "kennedy",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Behind the scenes of cutting-edge software solutions stands Emeanuri Kennedy C., a meticulous software engineer who turns complex challenges into elegant code. With a passion for problem-solving and a dedication to innovation, Emeanuri ensures that every line of code contributes to robust and efficient applications.",
     id: 8,
   },
   {
@@ -82,7 +82,7 @@ const speakers = [
     position: "Technical Writer",
     imgUrl: jennifer,
     person: "jennifer",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "In the realm of technology, Udedibia Jennifer C. bridges the gap between complexity and comprehension. As a technical writer, Jennifer has the unique ability to translate intricate concepts into accessible, user-friendly documentation. Her words empower users and fellow developers to navigate the digital landscape with confidence.",
     id: 9,
   },
   {
@@ -90,7 +90,7 @@ const speakers = [
     position: "Project Manager",
     imgUrl: purity,
     person: "purity",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Guiding the journey from concept to reality, Alago Purity Chiemerie is a strategic product manager with a flair for orchestrating seamless product launches. With a holistic understanding of market trends and user needs, Alago oversees every aspect of the product lifecycle, ensuring that innovation meets real-world demands.",
     id: 10,
   },
   {
@@ -98,7 +98,7 @@ const speakers = [
     position: "IT Specialist",
     imgUrl: obed,
     person: "obed",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "In a world driven by technology, Afamefuna Obed U. stands as an unwavering pillar of IT expertise. With a knack for troubleshooting and an extensive knowledge of systems, Afamefuna keeps digital infrastructures running smoothly. His commitment to seamless operations ensures that technology remains an enabler, not a barrier.",
     id: 11,
   },
   {
@@ -106,7 +106,7 @@ const speakers = [
     position: "Web Designer",
     imgUrl: reuben,
     person: "reuben",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "Transcending the boundaries of visual creativity, Ogbonna Chibuikem Reuben crafts web experiences that are as stunning as they are functional. With an artistic eye and a deep understanding of user behavior, Ogbonna turns websites into engaging works of art, combining aesthetics with intuitive navigation.",
     id: 12,
   },
   {
@@ -114,7 +114,7 @@ const speakers = [
     position: "Product Manager",
     imgUrl: ferdinand,
     person: "ferdinand",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius deserunt a hic asperiores vitae animi. Incidunt, eos! Eius, molestias? Quasi omnis error tenetur hic, velit voluptas dolorum eaque magnam veniam.",
+    text: "At the intersection of innovation and market demand, Nnolum Ferdinand Chidiebere thrives as a forward-thinking product manager. With a strategic mindset and a passion for excellence, Ferdinand spearheads the development of products that not only meet user needs but also push the boundaries of possibility.",
     id: 13,
   },
 ];

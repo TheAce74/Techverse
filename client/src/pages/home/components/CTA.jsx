@@ -2,6 +2,7 @@ import { useRef } from "react";
 import FormInput from "../../../components/form/FormInput";
 import Button from "../../../components/ui/Button";
 import { fetchData } from "../../../utils/fetchData";
+import Swal from "sweetalert2";
 
 function CTA() {
   const emailRef = useRef(null);
@@ -10,16 +11,33 @@ function CTA() {
     event.preventDefault();
     fetchData("keepmeupdated", "post", {
       email: emailRef.current.value,
-    }).then(data => {
-      console.log(data);
-      if (data.status === "success") {
-       // success alert
+    }).then((data) => {
+      if (data.message) {
+        Swal.fire({
+          title: "Success",
+          text: data.message,
+          icon: "success",
+          confirmButtonText: "Continue",
+          confirmButtonColor: "var(--clr-secondary-400)",
+        }).then(() => {
+          event.target.reset();
+        });
       } else {
-        // throw error
+        Swal.fire({
+          title: "Error",
+          text: data.error,
+          icon: "error",
+          confirmButtonText: "Try again",
+          confirmButtonColor: "var(--clr-secondary-400)",
+        });
       }
-
     });
-    event.target.reset();
+    Swal.fire({
+      title: "Info",
+      text: "Please wait a moment...",
+      icon: "info",
+      showConfirmButton: false,
+    });
   };
 
   return (

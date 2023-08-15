@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 const FormInput = forwardRef(
-  ({ type, placeholder, rounded, required, textarea, id }, ref) => {
+  ({ type, placeholder, rounded, required, textarea, id, value }, ref) => {
     return (
       <>
         {!textarea ? (
@@ -13,6 +13,7 @@ const FormInput = forwardRef(
             required={required}
             id={id}
             ref={ref}
+            value={value}
           />
         ) : (
           <textarea
@@ -23,6 +24,7 @@ const FormInput = forwardRef(
             required={required}
             id={id}
             ref={ref}
+            value={value}
           ></textarea>
         )}
       </>

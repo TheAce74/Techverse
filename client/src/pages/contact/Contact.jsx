@@ -2,11 +2,14 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import FormInput from "../../components/form/FormInput";
 import Button from "../../components/ui/Button";
+import { useAppContext } from "../../context/AppContext";
 
 function Contact() {
   const location = useLocation();
 
-  const handleSubmit = event => {
+  const { user } = useAppContext();
+
+  const handleSubmit = (event) => {
     event.preventDefault();
   };
 
@@ -26,7 +29,11 @@ function Contact() {
             us? Please fill out the form below
           </h1>
           <form onSubmit={handleSubmit}>
-            <FormInput placeholder="Full name" required={true} />
+            <FormInput
+              placeholder="Full name"
+              required={true}
+              value={user ? user : null}
+            />
             <FormInput
               placeholder="Email address"
               required={true}
