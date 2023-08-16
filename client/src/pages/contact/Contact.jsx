@@ -5,6 +5,7 @@ import Button from "../../components/ui/Button";
 import { useAppContext } from "../../context/AppContext";
 import { useRef } from "react";
 import { fetchData } from "../../utils/fetchData";
+import Swal from "sweetalert2";
 
 function Contact() {
   const location = useLocation();
@@ -14,13 +15,39 @@ function Contact() {
 
   const { user } = useAppContext();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     fetchData("contact", "post", {
       fullname: fullnameRef.current.value,
       email: emailRef.current.value,
-      message: messageRef.current.value
-    })
+      message: messageRef.current.value,
+    }).then(data => {
+      if (data.message) {
+        Swal.fire({
+          title: "Success",
+          text: "Message sent",
+          icon: "success",
+          confirmButtonText: "Continue",
+          confirmButtonColor: "var(--clr-secondary-400)",
+        }).then(() => {
+          event.target.reset();
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: data.error,
+          icon: "error",
+          confirmButtonText: "Try again",
+          confirmButtonColor: "var(--clr-secondary-400)",
+        });
+      }
+    });
+    Swal.fire({
+      title: "Info",
+      text: "Please wait a moment...",
+      icon: "info",
+      showConfirmButton: false,
+    });
   };
 
   return (
