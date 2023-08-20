@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../../../context/AppContext";
 
 function Hero() {
-  const { user } = useAppContext();
+  const { user, setLoader } = useAppContext();
   return (
     <section className="hero">
       <h1>
@@ -22,6 +22,7 @@ function Hero() {
         ""
       )}
       <video
+        onPlaying={() => setLoader(false)}
         src={video}
         loop
         autoPlay

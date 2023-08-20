@@ -1,5 +1,5 @@
 import Loader from "../components/layout/Loader";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { getData } from "../utils/userData";
 
 const AppContext = createContext({});
@@ -13,12 +13,6 @@ function AppContextProvider({ children }) {
     user,
     setUser,
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(false);
-    }, 10000)
-  }, []);
 
   return (
     <AppContext.Provider value={value}>
