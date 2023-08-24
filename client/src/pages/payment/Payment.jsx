@@ -47,7 +47,6 @@ function Payment() {
   };
 
   const handleSubmit = (event) => {
-    console.log(import.meta.env.VITE_KEY);
     event.preventDefault();
     const paystack = new PaystackPop();
     paystack.newTransaction({
