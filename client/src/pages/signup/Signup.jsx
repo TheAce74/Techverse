@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import FormInputHOC from "../../components/form/FormInputHOC";
 import FormInput from "../../components/form/FormInput";
 import Button from "../../components/ui/Button";
 import { BiSolidUser } from "react-icons/bi";
 import { IoMdMail } from "react-icons/io";
 import { HiLockClosed } from "react-icons/hi";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Swal from "sweetalert2";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { useAppContext } from "../../context/AppContext";
 
 function Signup() {
   const location = useLocation();
@@ -18,6 +19,8 @@ function Signup() {
   const password1Ref = useRef(null);
   const password2Ref = useRef(null);
   const { signup } = useAuthentication();
+  const { user, setLoader } = useAppContext();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,6 +48,13 @@ function Signup() {
       });
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/profile");
+    }
+    setLoader(false);
+  }, []);
 
   return (
     <>

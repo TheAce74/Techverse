@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
 
 function ResetPassword() {
   const location = useLocation();
+
+  const { setLoader } = useAppContext();
+
+  useEffect(() => {
+    setLoader(false);
+  }, []);
 
   return (
     <>
