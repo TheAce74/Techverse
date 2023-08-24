@@ -10,13 +10,12 @@ function useAuthentication() {
 
   const signup = (url, method, info) => {
     setLoader(true);
-    fetchData(url, method, info).then(data => {
+    fetchData(url, method, info).then((data) => {
       setLoader(false);
       if (data.status === "success") {
         setUser(data.username);
         setData("user", data.username);
-        // Navigate to profile page or ticket page
-        navigate("/");
+        navigate("/payment");
       } else {
         Swal.fire({
           title: "Signup Failed",
@@ -36,13 +35,12 @@ function useAuthentication() {
       setLoader(false);
       setUser(user);
     } else {
-      fetchData(url, method, info).then(data => {
+      fetchData(url, method, info).then((data) => {
         setLoader(false);
         if (data.user?.username) {
           setUser(data.user.username);
           setData("user", data.user.username);
-          // Navigate to profile page
-          navigate("/");
+          navigate("/profile");
         } else {
           Swal.fire({
             title: "Login Failed",
@@ -59,6 +57,7 @@ function useAuthentication() {
   const logout = () => {
     removeData("user");
     setUser("");
+    navigate("/");
   };
 
   return { signup, login, logout };

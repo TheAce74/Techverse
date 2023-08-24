@@ -10,7 +10,7 @@
 
 .selected-option {
   @extend .flex;
-  padding: 0.3em 0.8em;
+  padding: 0.6em 0.8em;
   border: 1px solid var(--clr-neutral-900);
   cursor: pointer;
   width: 100%;
@@ -22,15 +22,19 @@
       fill: var(--clr-secondary-400);
     }
   }
+
+  &--selected {
+    font-weight: 500;
+  }
 }
 
 .options {
   position: absolute;
+  z-index: 1;
   display: grid;
   grid-template-rows: 0fr;
   left: 0;
   width: 100%;
-  border-radius: 0 0 0.4em 0.4em;
   transition: grid-template-rows 0.3s, border 0.3s;
 
   &--shown {

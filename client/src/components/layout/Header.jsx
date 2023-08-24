@@ -104,7 +104,7 @@ function Header() {
         ) : (
           <div className="user">
             <span aria-hidden="true" data-color={randomColor()}>
-              <span aria-hidden="true">{user[0]}</span>
+              <span aria-hidden="true">{user[0].toUpperCase()}</span>
             </span>
             <p>{user}</p>
           </div>

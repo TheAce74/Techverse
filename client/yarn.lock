@@ -439,6 +439,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@paystack/inline-js@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@paystack/inline-js/-/inline-js-2.13.0.tgz#026950ede426080b1959212eaaee38ae51022c0d"
+  integrity sha512-KkHh3MTsYXBE5hSp2P3bQ1TpFQdRDuWwsxq3A1Ggfm0aMUru8uk88Lj2C67a6Ub1VRxUZnedFbbf4OcdLaW5Kg==
+
 "@remix-run/router@1.7.2":
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.7.2.tgz#cba1cf0a04bc04cb66027c51fa600e9cbc388bc8"

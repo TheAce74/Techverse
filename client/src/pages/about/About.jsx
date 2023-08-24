@@ -2,11 +2,16 @@ import { Link, useLocation } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import { motion } from "framer-motion";
 import { useAppContext } from "../../context/AppContext";
+import { useEffect } from "react";
 
 function About() {
   const location = useLocation();
 
-  const { user } = useAppContext();
+  const { user, setLoader } = useAppContext();
+
+  useEffect(() => {
+    setLoader(false);
+  }, []);
 
   return (
     <>

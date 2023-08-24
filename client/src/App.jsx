@@ -12,6 +12,8 @@ import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "./utils/ScrollToTop";
 import ResetPassword from "./pages/resetpassword/ResetPassword";
 import AppContextProvider from "./context/AppContext";
+import Profile from "./pages/profile/Profile";
+import Payment from "./pages/payment/Payment";
 
 function App() {
   const router = createBrowserRouter([
@@ -54,6 +56,14 @@ function App() {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/payment",
+          element: <Payment />,
         },
         {
           path: "/resetpassword",

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import FormInput from "../../components/form/FormInput";
 import Button from "../../components/ui/Button";
 import { useAppContext } from "../../context/AppContext";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { fetchData } from "../../utils/fetchData";
 import Swal from "sweetalert2";
 
@@ -13,15 +13,15 @@ function Contact() {
   const messageRef = useRef(null);
   const emailRef = useRef(null);
 
-  const { user } = useAppContext();
+  const { user, setLoader } = useAppContext();
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     fetchData("contact", "post", {
       fullname: fullnameRef.current.value,
       email: emailRef.current.value,
       message: messageRef.current.value,
-    }).then(data => {
+    }).then((data) => {
       if (data.message) {
         Swal.fire({
           title: "Success",
@@ -49,6 +49,10 @@ function Contact() {
       showConfirmButton: false,
     });
   };
+
+  useEffect(() => {
+    setLoader(false);
+  }, []);
 
   return (
     <>

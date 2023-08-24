@@ -4,6 +4,7 @@ export default function DropdownItem({ icon, handleSelect, id, value, first }) {
       className="option"
       onClick={() => handleSelect(value)}
       aria-label={`dropdown item ${id}`}
+      type="button"
     >
       {first === "text" ? (
         <>

@@ -4,14 +4,15 @@
   @extend %button;
   @extend .flex;
   width: 100%;
-  padding: 0.3em 0.8em;
-
-  &:last-child {
-    border-radius: 0 0 0.4em 0.4em;
-  }
+  padding: 0.6em 0.8em;
+  background-color: var(--clr-neutral-100);
 
   .icon {
     fill: var(--clr-neutral-900);
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid var(--clr-neutral-900);
   }
 }
 

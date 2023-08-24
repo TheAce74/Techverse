@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import FormInputHOC from "../../components/form/FormInputHOC";
 import Button from "../../components/ui/Button";
 import { IoMdMail } from "react-icons/io";
 import { HiLockClosed } from "react-icons/hi";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { useAppContext } from "../../context/AppContext";
 
 function Login() {
   const location = useLocation();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const { login } = useAuthentication();
+  const { user, setLoader } = useAppContext();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,6 +23,13 @@ function Login() {
       password: passwordRef.current.value,
     });
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/profile");
+    }
+    setLoader(false);
+  }, []);
 
   return (
     <>
@@ -53,10 +63,10 @@ function Login() {
             <Button type="submit" color="secondary">
               Login
             </Button>
-            {/* <p>
+            <p>
               Forgot password?{" "}
               <Link to="/resetpassword">Reset your password</Link>
-            </p> */}
+            </p>
             <p>
               Not registered? <Link to="/signup">Register now</Link>
             </p>

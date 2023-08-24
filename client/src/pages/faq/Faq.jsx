@@ -2,9 +2,13 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Faq from "react-faq-component";
 import { faqData } from "../../data/faq";
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
 
 function FAQ() {
   const location = useLocation();
+
+  const { setLoader } = useAppContext();
 
   const config = {
     animate: true,
@@ -22,6 +26,10 @@ function FAQ() {
     rowContentPaddingLeft: "1.5em",
     arrowColor: "var(--clr-neutral-100)",
   };
+
+  useEffect(() => {
+    setLoader(false);
+  }, []);
 
   return (
     <>
