@@ -23,6 +23,6 @@
     "nodemailer": "^6.9.4",
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.15",
-    "uuid": "^3.3.3"
+    "uuid": "^9.0.0"
   }
 }

@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
+const Seat = require("../models/seats");
 const mongoose = require("mongoose");
 const generateToken = require("../utils/generatetoken");
 const logOut = require("../utils/logout");
@@ -7,6 +8,7 @@ const dateFormat = { month: "long", day: "numeric", year: "numeric" };
 const today = new Date().toLocaleDateString([], dateFormat);
 const nodeMail = require("nodemailer");
 var smtpTransport = require("nodemailer-smtp-transport");
+const { v4: uuidv4 } = require("uuid");
 
 //creating bucket for file uploads
 let bucket;
@@ -93,20 +95,43 @@ const defaultController = {
   ticket: (req, res) => {
     console.log(req.body);
     const username = req.body.username;
-    const ticket = req.body.ticket;
-    const seat_number = req.body.seat_number;
+    const ticket_type = req.body.ticket_type;
     User.findOne({ username }).then((user) => {
-      user.ticket = ticket;
-      user.seat_number = seat_number;
-      user.save((err) => {
-        console.log({ message: "user ticket updated!" });
+      // assign seat number
+      Seat.findOne({ name: "Seat" }).then((seat) => {
+        if (seat.allocated < 200) {
+          user.seat_number = seat.allocated + 1;
+          user.ticket_type = ticket_type;
+          user.ticket_id = uuidv4();
+          user.save((user) => {
+            console.log({ message: "user ticket updated!" });
+            User.findOne({ username })
+              .then((user) => {
+                res.json({ user });
+              })
+              .catch((err) => {
+                res.json({ error: err });
+              });
+          });
+
+          seat.allocated = seat.allocated + 1;
+          seat.save((err) => {
+            console.log({ message: "seat allocated!" });
+          });
+        } else {
+          res.json({ error: "No more seats available" });
+        }
       });
     });
-    res.json({
-      username,
-      ticket: req.body.ticket,
-      seat_number: req.body.seat_number,
-    });
+  },
+  initializeSeats: (req, res) => {
+    Seat.create({ name: "Seat", allocated: 0 })
+      .then((seat) => {
+        res.json({ seat });
+      })
+      .catch((err) => {
+        res.json({ error: err });
+      });
   },
   confirmation: (req, res) => {
     console.log(req.body);
@@ -780,7 +805,7 @@ const defaultController = {
       })
       .catch((err) => console.log(err));
   },
-  contact:(req,res)=>{
+  contact: (req, res) => {
     console.log(req.body);
     const email = req.body.email;
     const message = req.body.message;

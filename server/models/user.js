@@ -13,7 +13,11 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  ticket: {
+  ticket_type: {
+    type: String,
+    required: false,
+  },
+  ticket_id: {
     type: String,
     required: false,
   },

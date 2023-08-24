@@ -33,6 +33,7 @@ router.post("/login", controller.login);
 router.post("/ticket", controller.ticket);
 router.post("/keepmeupdated", controller.confirmation);
 router.post("/contact", controller.contact);
+router.get("/init", controller.initializeSeats);
 
 
 

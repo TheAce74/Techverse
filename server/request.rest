@@ -23,10 +23,15 @@ POST http://localhost:5000/ticket
 Content-Type: application/json
 
 {
-    "username": "theace",
-    "ticket":"GOLD",
-    "seat_number": "12"
+    "username": "Ace Technlogies",
+    "ticket_type":"BRONZE"
 }
+
+###
+
+GET http://localhost:5000/init
+Content-Type: application/json
+
 
 ###
 
@@ -69,16 +74,6 @@ Content-Type: application/json
     "password": "theace"
 }
 
-###
-
-POST https://techverse-v2.onrender.com/ticket
-Content-Type: application/json
-
-{
-    "username": "theace",
-    "ticket":"GOLD",
-    "seat_number": "12"
-}
 
 ###
 
