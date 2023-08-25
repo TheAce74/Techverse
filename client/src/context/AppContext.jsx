@@ -8,16 +8,17 @@ function AppContextProvider({ children }) {
   const [loader, setLoader] = useState(true);
   const [user, setUser] = useState(
     getData("user") || {
-      username: null,
-      email: null,
-      seat_number: null,
-      ticket_id: null,
-      ticket_type: null,
+      username: "",
+      email: "",
+      seat_number: 0,
+      ticket_id: "",
+      ticket_type: "",
+      color: "",
     }
   );
 
   const addUser = (user) => {
-    setData("user", user)
+    setData("user", user);
     setUser(user);
   };
 

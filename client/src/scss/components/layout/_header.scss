@@ -73,6 +73,7 @@
     @extend .flex;
     @extend %link;
     gap: 0.5em;
+    transition: scale 0.3s;
 
     & > span {
       @extend .flex;
@@ -104,6 +105,10 @@
       &[data-color="neutral-900"] {
         background-color: var(--clr-neutral-900);
       }
+    }
+
+    &:is(:hover, :focus-visible) {
+      scale: 0.9;
     }
   }
 
@@ -167,7 +172,7 @@
       font-weight: 600;
       right: 20%;
       z-index: 2;
-      transition: color 0.3s, right 0.3s;
+      transition: color 0.3s, right 0.3s, scale 0.3s;
 
       & > span {
         display: none;

@@ -3,12 +3,13 @@ import techverse from "../../assets/images/techverse.svg";
 import Button from "../ui/Button";
 import { IoMdClose } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import { useAppContext } from "../../context/AppContext";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const { user, addUser } = useAppContext();
 
   const handleClickAway = () => {
     setOpenMenu(false);
@@ -25,7 +26,12 @@ function Header() {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
-  const { user } = useAppContext();
+  useEffect(() => {
+    addUser({
+      ...user,
+      color: randomColor(),
+    });
+  }, [user.username]);
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
@@ -103,7 +109,7 @@ function Header() {
           </NavLink>
         ) : (
           <NavLink to="/profile" className="user" title="Go to profile">
-            <span aria-hidden="true" data-color={randomColor()}>
+            <span aria-hidden="true" data-color={user.color}>
               <span aria-hidden="true">{user.username[0].toUpperCase()}</span>
             </span>
             <p>{user.username}</p>

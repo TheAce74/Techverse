@@ -19,7 +19,9 @@ function Hero() {
           <Button>Register Now</Button>
         </Link>
       ) : (
-        ""
+        <Link to="/profile">
+          <Button>Your Profile</Button>
+        </Link>
       )}
       <video
         onPlaying={() => setLoader(false)}

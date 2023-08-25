@@ -7,13 +7,19 @@ async function fetchData(url, method = "get", info) {
   const baseUrl = "https://techverse-v2.onrender.com/";
   let data;
   if (method === "get") {
-    const response = await axios.get(`${baseUrl}${url}`);
-    data = response.data;
+    try {
+      const response = await axios.get(`${baseUrl}${url}`);
+      data = response.data;
+    } catch (error) {
+      data = error.message;
+    }
   } else {
-    const response = await axios.post(`${baseUrl}${url}`,
-      info,
-    );
-    data = response.data;
+    try {
+      const response = await axios.post(`${baseUrl}${url}`, info);
+      data = response.data;
+    } catch (error) {
+      data = error.message;
+    }
   }
   return data;
 }

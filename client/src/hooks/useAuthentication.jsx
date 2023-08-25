@@ -12,7 +12,7 @@ function useAuthentication() {
     setLoader(true);
     fetchData(url, method, info).then((data) => {
       setLoader(false);
-      if (data.user?.username) {
+      if (data?.user?.username) {
         addUser({
           ...user,
           username: data.user.username,
@@ -22,7 +22,7 @@ function useAuthentication() {
       } else {
         Swal.fire({
           title: "Signup Failed",
-          text: data.error,
+          text: data?.error || data,
           icon: "error",
           confirmButtonText: "Try again",
           confirmButtonColor: "var(--clr-secondary-400)",
@@ -35,19 +35,20 @@ function useAuthentication() {
     setLoader(true);
     fetchData(url, method, info).then((data) => {
       setLoader(false);
-      if (data.user?.username) {
+      if (data?.user?.username) {
         addUser({
+          ...user,
           username: data.user.username,
           email: data.user.email,
-          seat_number: data.user?.seat_number || null,
-          ticket_id: data.user?.ticket_id || null,
-          ticket_type: data.user?.ticket_type || null,
+          seat_number: data.user?.seat_number || 0,
+          ticket_id: data.user?.ticket_id || "",
+          ticket_type: data.user?.ticket_type || "",
         });
         navigate("/profile");
       } else {
         Swal.fire({
           title: "Login Failed",
-          text: data.error,
+          text: data?.error || data,
           icon: "error",
           confirmButtonText: "Try again",
           confirmButtonColor: "var(--clr-secondary-400)",
@@ -57,15 +58,20 @@ function useAuthentication() {
   };
 
   const logout = () => {
-    addUser({
-      username: null,
-      email: null,
-      seat_number: null,
-      ticket_id: null,
-      ticket_type: null,
-    });
-    removeData("user");
-    navigate("/");
+    setLoader(true);
+    setTimeout(() => {
+      addUser({
+        username: "",
+        email: "",
+        seat_number: 0,
+        ticket_id: "",
+        ticket_type: "",
+        color: "",
+      });
+      removeData("user");
+      navigate("/");
+      setLoader(false);
+    }, 3000);
   };
 
   return { signup, login, logout };
