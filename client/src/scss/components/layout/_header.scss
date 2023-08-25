@@ -71,6 +71,7 @@
 
   .user {
     @extend .flex;
+    @extend %link;
     gap: 0.5em;
 
     & > span {

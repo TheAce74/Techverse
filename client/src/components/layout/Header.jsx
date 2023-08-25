@@ -102,12 +102,12 @@ function Header() {
             <Button color="secondary">Get Ticket</Button>
           </NavLink>
         ) : (
-          <div className="user">
+          <NavLink to="/profile" className="user" title="Go to profile">
             <span aria-hidden="true" data-color={randomColor()}>
               <span aria-hidden="true">{user.username[0].toUpperCase()}</span>
             </span>
             <p>{user.username}</p>
-          </div>
+          </NavLink>
         )}
       </header>
     </ClickAwayListener>
