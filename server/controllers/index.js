@@ -44,8 +44,14 @@ const defaultController = {
                 bcrypt.hash(req.body.password, 10, (err, hash) => {
                   userData.password = hash;
                   User.create(userData)
-                    .then((user) => {
-                      generateToken(res, user.username);
+                    .then(() => {
+                      User.findOne({ username: userData.username })
+                        .then((user) => {
+                          res.json({ user });
+                        })
+                        .catch((err) => {
+                          res.json({ error: err });
+                        });
                       return;
                     })
                     .catch((err) => {
