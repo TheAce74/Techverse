@@ -15,9 +15,10 @@ import {
 } from "react-icons/bs";
 import Swal from "sweetalert2";
 import PaystackPop from "@paystack/inline-js";
+import { fetchData } from "../../utils/fetchData";
 
 function Payment() {
-  const { user, setLoader } = useAppContext();
+  const { user, addUser, setLoader } = useAppContext();
   const navigate = useNavigate();
   const ticketRef = useRef(null);
   const paymentRef = useRef(null);
@@ -50,17 +51,17 @@ function Payment() {
     event.preventDefault();
     const paystack = new PaystackPop();
     paystack.newTransaction({
-      key: import.meta.env.VITE_KEY,
+      key: "pk_test_3b2ea55e88dda1689ca3a079e7327733683a6135",
+      // key: import.meta.env.VITE_KEY,
       amount:
         Number(
           recordRef.current.ticket.slice(
             recordRef.current.ticket.indexOf("-") + 2
           )
         ) * 100,
-      // change this to user email later
-      email: "udonsichisom@yahoo.com",
-      firstname: user.slice(0, user.indexOf(" ")),
-      lastname: user.slice(user.indexOf(" ") + 1),
+      email: user.email,
+      firstname: user.username.slice(0, user.username.indexOf(" ")),
+      lastname: user.username.slice(user.username.indexOf(" ") + 1),
       onSuccess(transaction) {
         Swal.fire({
           title: "Payment Successful",
@@ -70,8 +71,31 @@ function Payment() {
           confirmButtonColor: "var(--clr-secondary-400)",
         }).then(() => {
           setLoader(true);
-          //add ticket request logic to backend here
-          navigate("/profile");
+          fetchData("ticket", "post", {
+            username: user.username,
+            ticket_type: recordRef.current.ticket
+              .slice(0, recordRef.current.ticket.indexOf("-") - 1)
+              .toUpperCase(),
+          }).then((data) => {
+            setLoader(false);
+            if (data.user?.username) {
+              addUser({
+                ...user,
+                seat_number: data.user.seat_number,
+                ticket_id: data.user.ticket_id,
+                ticket_type: data.user.ticket_type,
+              });
+              navigate("/profile");
+            } else {
+              Swal.fire({
+                title: "Server error",
+                text: "Failed to update server with ticket details",
+                icon: "error",
+                confirmButtonText: "Try again",
+                confirmButtonColor: "var(--clr-secondary-400)",
+              });
+            }
+          });
         });
       },
       onCancel() {
@@ -87,8 +111,10 @@ function Payment() {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!user?.username) {
       navigate("/login");
+    } else if (user?.ticket_id) {
+      navigate("/profile");
     }
     setLoader(false);
   }, []);

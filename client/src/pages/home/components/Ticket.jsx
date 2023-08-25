@@ -33,7 +33,7 @@ export default function Ticket({
             <li key={id}>{text}</li>
           ))}
         </ul>
-        {!user ? (
+        {!user?.username ? (
           <Link to="/signup">
             <Button color={buttonColor}>Buy ticket</Button>
           </Link>

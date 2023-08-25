@@ -73,7 +73,7 @@ function Contact() {
             <FormInput
               placeholder="Full name"
               required={true}
-              value={user ? user : null}
+              value={user?.username ? user.username : null}
               ref={fullnameRef}
             />
             <FormInput

@@ -1,17 +1,31 @@
 import Loader from "../components/layout/Loader";
 import { createContext, useContext, useState } from "react";
-import { getData } from "../utils/userData";
+import { getData, setData } from "../utils/userData";
 
 const AppContext = createContext({});
 
 function AppContextProvider({ children }) {
   const [loader, setLoader] = useState(true);
-  const [user, setUser] = useState(getData("user") || "");
+  const [user, setUser] = useState(
+    getData("user") || {
+      username: null,
+      email: null,
+      seat_number: null,
+      ticket_id: null,
+      ticket_type: null,
+    }
+  );
+
+  const addUser = (user) => {
+    setData("user", user)
+    setUser(user);
+  };
+
   const value = {
     loader,
     setLoader,
     user,
-    setUser,
+    addUser,
   };
 
   return (

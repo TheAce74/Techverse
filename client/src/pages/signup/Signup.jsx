@@ -50,7 +50,7 @@ function Signup() {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user?.username) {
       navigate("/profile");
     }
     setLoader(false);

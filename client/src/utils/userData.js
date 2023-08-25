@@ -1,9 +1,9 @@
 function getData(name) {
-  return localStorage.getItem(name);
+  return JSON.parse(localStorage.getItem(name));
 }
 
 function setData(name, item) {
-  localStorage.setItem(name, item);
+  localStorage.setItem(name, JSON.stringify(item));
 }
 
 function removeData(name) {

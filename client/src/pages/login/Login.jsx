@@ -25,7 +25,7 @@ function Login() {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user?.username) {
       navigate("/profile");
     }
     setLoader(false);

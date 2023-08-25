@@ -50,7 +50,7 @@ function About() {
             Techverse offers a platform for networking, learning, and
             collaboration like no other.
           </p>
-          {!user ? (
+          {!user?.username ? (
             <Link to="/signup" className="register">
               <Button color="secondary">Get Ticket</Button>
             </Link>

@@ -97,16 +97,16 @@ function Header() {
             </li>
           </ul>
         </nav>
-        {!user ? (
+        {!user?.username ? (
           <NavLink to="/signup" className="register">
             <Button color="secondary">Get Ticket</Button>
           </NavLink>
         ) : (
           <div className="user">
             <span aria-hidden="true" data-color={randomColor()}>
-              <span aria-hidden="true">{user[0].toUpperCase()}</span>
+              <span aria-hidden="true">{user.username[0].toUpperCase()}</span>
             </span>
-            <p>{user}</p>
+            <p>{user.username}</p>
           </div>
         )}
       </header>

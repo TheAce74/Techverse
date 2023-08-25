@@ -14,7 +14,7 @@ function Hero() {
         Explore and discover a limitless world filled with endless opportunities
         through the leveraging of new and exciting technologies
       </p>
-      {!user ? (
+      {!user?.username ? (
         <Link to="/signup">
           <Button>Register Now</Button>
         </Link>

@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useAppContext } from "../../context/AppContext";
 
 function ResetPassword() {
   const location = useLocation();
 
-  const { setLoader } = useAppContext();
+  const { user, setLoader } = useAppContext();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (user?.username) {
+      navigate("/profile");
+    }
     setLoader(false);
   }, []);
 

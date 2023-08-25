@@ -8,7 +8,7 @@ function Profile() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
+    if (!user?.username) {
       navigate("/login");
     }
     setLoader(false);
