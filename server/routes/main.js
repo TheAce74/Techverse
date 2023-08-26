@@ -35,6 +35,24 @@ router.post("/keepmeupdated", controller.confirmation);
 router.post("/contact", controller.contact);
 router.get("/init", controller.initializeSeats);
 
+//one hit reset password route
+router.post("/forgotpassword", controller.forgotpassword);
+
+
+
+// Password Reset Route #1
+// Sends Reset Link to a Registered Email Address
+router.post("/forgot", controller.forgot);
+
+// Password Reset Route #2
+// Verifies Token and Renders Reset Page
+router.get("/reset/:token", controller.verifyToken);
+
+// Password Reset Route #3
+// Verifies Token and Sets New Password for the account
+router.post("/reset/:token", controller.resetPassword);
+
+
 
 
 //Get All Users

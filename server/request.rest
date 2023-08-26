@@ -2,9 +2,9 @@ POST http://localhost:5000/register
 Content-Type: application/json
 
 {
-    "username": "theacexxyyy",
-    "email":"theacexxyyy@gmail.com",
-    "password": "theace"
+    "username": "blackguyx",
+    "email":"iloenyenwavictor@gmail.com",
+    "password": "blackguyx"
 }
 
 ###
@@ -13,8 +13,8 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email":"theace@gmail.com",
-    "password": "theace"
+    "email":"iloenyenwavictor@gmail.com",
+    "password": "letsgetit"
 }
 
 ###
@@ -94,3 +94,14 @@ Content-Type: application/json
     "message":"Let's just cook",
     "fullname": "Andrea Martinez"
 }
+
+###
+
+POST http://localhost:5000/forgotpassword
+Content-Type: application/json
+
+{
+    "email": "iloenyenwavcctor@gmail.com",
+    "password":"letsgetit"
+}
+

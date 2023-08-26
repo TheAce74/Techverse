@@ -7,7 +7,8 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import { BiSolidPencil } from "react-icons/bi";
 import Modal from "react-modal";
 import Swal from "sweetalert2";
-import { fetchData } from "../../utils/fetchData";
+// import { fetchData } from "../../utils/fetchData";
+import axios from "axios";
 
 function Profile() {
   const { user, setLoader } = useAppContext();
@@ -21,11 +22,27 @@ function Profile() {
 
   const handleUpload = (event) => {
     event.preventDefault();
+    // the image is stored in the user object property called photo_url, that is user.photo_url
+    // now to access the image, we use https://techverse-v2.onrender.com/fileinfo/{photo_url}
+    // for example, user.photo_url: "yotalk1693078936905n.jfif"
+    // <img src={https://techverse-v2.onrender.com/fileinfo/yotalk1693078936905n.jfif} alt="" />
+
     const image = imageRef.current.files[0];
+    const url = "https://techverse-v2.onrender.com/user/upload";
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
     const formData = new FormData();
-    formData.append("image", image);
-    //this is where the upload fetch logic is
-    fetchData("upload", "post", formData);
+    formData.append("username", user.username);
+    formData.append("file", image);
+    axios
+      .post(url, formData, config)
+      .then(() => {
+        console.log("pfp updated");
+      })
+      .catch((err) => console.log({ err }));
     setModalIsOpen(false);
   };
 

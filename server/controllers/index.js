@@ -9,6 +9,8 @@ const today = new Date().toLocaleDateString([], dateFormat);
 const nodeMail = require("nodemailer");
 var smtpTransport = require("nodemailer-smtp-transport");
 const { v4: uuidv4 } = require("uuid");
+const secretCode = require("../models/secretCode");
+const sendCode = require("../utils/sendCode");
 
 //creating bucket for file uploads
 let bucket;
@@ -1138,6 +1140,89 @@ const defaultController = {
       });
     });
     res.json({ username, file: req.file });
+  },
+  forgotpassword: (req, res) => {
+    const email = req.body.email;
+    User.findOne({ email }).then((user) => {
+      if (user) {
+              bcrypt.hash(req.body.password, 10, (err, hash) => {
+        user.password = hash;
+        user.save((err) => {
+          res.json({ message: "Password has been reset" });
+          return
+        });
+      });
+      } else {
+        res.json({message:"this email address is not connected to an account!"})
+      }
+
+    });
+  },
+  forgot: (req, res) => {
+    const email = req.body.email;
+
+    User.findOne({ email })
+      .then((user) => {
+        if (!user) {
+          res.json({ message: "This email address is not registered" });
+        } else {
+          // console.log(user)
+          const token = uuidv4();
+          user.resetPasswordToken = token;
+          user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+          user.save((err, user) => {
+            if (err) return console.log({ err });
+            console.log("Token updated");
+            sendCode(req, user, token);
+          });
+        }
+        return;
+      })
+      .catch((err) => {
+        res.json({ message: err });
+      });
+  },
+  verifyToken: (req, res) => {
+    User.findOne(
+      {
+        resetPasswordToken: req.params.token,
+        resetPasswordExpires: { $gt: Date.now() },
+      },
+      (err, user) => {
+        if (!user) {
+          res.json({
+            message: "Password reset token is invalid or has expired.",
+          });
+          return res.redirect("/forgot");
+        }
+        res.send("<h1> You can reset your password</h1>");
+        // res.render('reset', {user: req.user});
+      }
+    );
+  },
+  resetPassword: (req, res) => {
+    User.findOne(
+      {
+        resetPasswordToken: req.params.token,
+        resetPasswordExpires: { $gt: Date.now() },
+      },
+      (err, user) => {
+        if (!user) {
+          res.json({
+            message: "Password reset token is invalid or has expired.",
+          });
+          return res.redirect("/forgot");
+        }
+        bcrypt.hash(req.body.password, 10, (err, hash) => {
+          user.password = hash;
+          user.resetPasswordToken = undefined;
+          user.resetPasswordExpires = undefined;
+          user.save((err) => {
+            res.json({ message: "Password has been reset" });
+          });
+        });
+      }
+    );
   },
   logout: (req, res) => {
     logOut(res);
