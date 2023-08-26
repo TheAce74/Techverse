@@ -71,6 +71,10 @@ function App() {
           path: "/resetpassword",
           element: <ResetPassword />,
         },
+        {
+          path: "/error",
+          element: <Error />,
+        },
       ],
     },
   ]);
