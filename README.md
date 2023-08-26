@@ -10,6 +10,7 @@ Welcome to the Techverse Conference Website!
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tools and Technologies](#tools-and-technologies)
 - [Contributing](#contributing)
 - [Feedback and Support](#feedback-and-support)
 - [License](#license)
@@ -63,6 +64,25 @@ yarn dev
 ```
 
 2. Open your preferred web browser and visit `http://localhost:3000` to access the Techverse Conference Website.
+
+## Tools and Technologies
+
+### Frontend
+
+- React (Frontend Library)
+- SASS (CSS Preprocessor)
+- Vite (Build Tool)
+- Paystack (Payment Gateway)
+- Axios (Data Dispatcher)
+- Framer Motion (Smooth Animator)
+- Sweet Alert (Stunning Alerts Supplier)
+- React Router (Routing Provider)
+
+### Backend
+
+- Node.js (Server Runtime)
+- Express.js (Node Framework)
+- MongoDB (Database)
 
 ## Contributing
 
