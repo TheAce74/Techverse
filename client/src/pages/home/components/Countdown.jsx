@@ -38,7 +38,8 @@ function getDate() {
   const secs = Math.max(
     Math.floor(
       (remainder - (days * 8.64e7 + hours * 3.6e6 + mins * 60000)) / 1000
-    )
+    ),
+    0
   );
   return {
     days: days,

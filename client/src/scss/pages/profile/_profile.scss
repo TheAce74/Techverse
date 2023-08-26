@@ -1,0 +1,102 @@
+@use "../../base" as *;
+
+.profile {
+  padding: 2em 1.5em;
+
+  .wrapper {
+    width: max(35%, 35ch);
+    margin-inline: auto;
+
+    & > div:first-child {
+      @extend .flex;
+      justify-content: flex-start;
+      gap: 1.5em;
+      margin-bottom: 1em;
+
+      .user {
+        padding: 0.2em;
+        border-radius: 50%;
+        border: 2px solid var(--clr-secondary-400);
+        width: max-content;
+
+        & > span {
+          @extend .flex;
+          flex-direction: column;
+          justify-content: center;
+          color: var(--clr-neutral-100);
+          width: 3.5em;
+          aspect-ratio: 1;
+          text-align: center;
+          font-weight: 600;
+          border-radius: 50%;
+
+          &[data-color="primary-400"] {
+            background-color: var(--clr-primary-400);
+          }
+
+          &[data-color="secondary-400"] {
+            background-color: var(--clr-secondary-400);
+          }
+
+          &[data-color="accent-400"] {
+            background-color: var(--clr-accent-400);
+          }
+
+          &[data-color="accent-500"] {
+            background-color: var(--clr-accent-500);
+          }
+
+          &[data-color="neutral-900"] {
+            background-color: var(--clr-neutral-900);
+          }
+
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      h2 {
+        font-weight: 400;
+
+        span {
+          display: block;
+        }
+
+        b {
+          font-weight: 500;
+        }
+      }
+    }
+
+    h1,
+    h3 {
+      margin-bottom: 0.5em;
+    }
+
+    & > p {
+      width: max(35ch, 35%);
+      background-color: var(--clr-neutral-200);
+      border-radius: 0.5em;
+      padding: 1em 2em;
+      color: var(--clr-neutral-300);
+      font-weight: 500;
+      margin-inline: auto;
+      margin-bottom: 0.5em;
+    }
+
+    & > button {
+      margin-block: 1em 2em;
+      padding-block: 0.5em;
+      width: 100%;
+    }
+
+    div:last-child:has(button) {
+      text-align: center;
+
+      button {
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
