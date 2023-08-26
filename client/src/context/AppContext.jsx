@@ -14,6 +14,7 @@ function AppContextProvider({ children }) {
       ticket_id: "",
       ticket_type: "",
       color: "",
+      image: "",
     }
   );
 

@@ -1,14 +1,65 @@
 import { motion } from "framer-motion";
 import { useAppContext } from "../../context/AppContext";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../components/ui/Button";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import { BiSolidPencil } from "react-icons/bi";
+import Modal from "react-modal";
+import Swal from "sweetalert2";
+import { fetchData } from "../../utils/fetchData";
 
 function Profile() {
   const { user, setLoader } = useAppContext();
   const { logout } = useAuthentication();
   const navigate = useNavigate();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const imageRef = useRef(null);
+  const [imageSrc, setImageSrc] = useState(user.image);
+
+  Modal.setAppElement("#root");
+
+  const handleUpload = (event) => {
+    event.preventDefault();
+    const image = imageRef.current.files[0];
+    const formData = new FormData();
+    formData.append("image", image);
+    //this is where the upload fetch logic is
+    fetchData("upload", "post", formData);
+    setModalIsOpen(false);
+  };
+
+  const validFileType = (file) => {
+    const fileTypes = ["image/png", "image/jpeg", "image/jpg"];
+    return fileTypes.includes(file.type);
+  };
+
+  const returnFileSize = (file) => {
+    return file.size;
+  };
+
+  const handleChange = () => {
+    const image = imageRef.current.files[0];
+    if (validFileType(image) && returnFileSize(image) <= 3145728) {
+      setImageSrc(URL.createObjectURL(image));
+    } else if (!validFileType(image)) {
+      Swal.fire({
+        title: "Invalid File Type",
+        text: "Only png, jpeg and jpg file types are accepted",
+        icon: "error",
+        confirmButtonText: "Try again",
+        confirmButtonColor: "var(--clr-secondary-400)",
+      });
+    } else {
+      Swal.fire({
+        title: "File Too Large",
+        text: "Image size must be at most 3MB",
+        icon: "error",
+        confirmButtonText: "Try again",
+        confirmButtonColor: "var(--clr-secondary-400)",
+      });
+    }
+  };
 
   useEffect(() => {
     if (!user?.username) {
@@ -30,7 +81,16 @@ function Profile() {
         <div>
           <div className="user">
             <span aria-hidden="true" data-color={user.color}>
-              <span aria-hidden="true">{user.username[0]?.toUpperCase()}</span>
+              {imageSrc ? (
+                <img src={imageSrc} alt="" />
+              ) : (
+                <span aria-hidden="true">
+                  {user.username[0]?.toUpperCase()}
+                </span>
+              )}
+              <button onClick={() => setModalIsOpen(true)}>
+                <BiSolidPencil />
+              </button>
             </span>
           </div>
           <h2>
@@ -40,6 +100,35 @@ function Profile() {
             <span>Welcome to your profile</span>
           </h2>
         </div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          style={{
+            content: {
+              top: "50%",
+              left: "50%",
+              right: "auto",
+              bottom: "auto",
+              marginRight: "-50%",
+              transform: "translate(-50%, -50%)",
+            },
+          }}
+        >
+          <h2>Upload Photo</h2>
+          <form onSubmit={handleUpload}>
+            <input
+              type="file"
+              className="file"
+              required
+              ref={imageRef}
+              accept="image/png, image/jpeg, image/jpg"
+              onChange={handleChange}
+            />
+            <Button color="secondary" type="submit">
+              Submit
+            </Button>
+          </form>
+        </Modal>
         <h1>Your personal information</h1>
         <h3>Firstname</h3>
         <p>{user.username.slice(0, user.username.indexOf(" "))}</p>

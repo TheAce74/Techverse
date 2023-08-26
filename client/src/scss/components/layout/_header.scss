@@ -107,6 +107,16 @@
       }
     }
 
+    img {
+      border-radius: 50%;
+      width: 2em;
+      aspect-ratio: 1;
+    }
+
+    &:has(img) {
+      background-color: transparent !important;
+    }
+
     &:is(:hover, :focus-visible) {
       scale: 0.9;
     }

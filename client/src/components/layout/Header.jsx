@@ -110,7 +110,13 @@ function Header() {
         ) : (
           <NavLink to="/profile" className="user" title="Go to profile">
             <span aria-hidden="true" data-color={user.color}>
-              <span aria-hidden="true">{user.username[0].toUpperCase()}</span>
+              {user.image ? (
+                <img src={user.image} alt="" />
+              ) : (
+                <span aria-hidden="true">
+                  {user.username[0]?.toUpperCase()}
+                </span>
+              )}
             </span>
             <p>{user.username}</p>
           </NavLink>

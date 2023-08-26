@@ -67,6 +67,7 @@ function useAuthentication() {
         ticket_id: "",
         ticket_type: "",
         color: "",
+        image: "",
       });
       removeData("user");
       navigate("/");
