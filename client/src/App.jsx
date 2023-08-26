@@ -14,6 +14,7 @@ import ResetPassword from "./pages/resetpassword/ResetPassword";
 import AppContextProvider from "./context/AppContext";
 import Profile from "./pages/profile/Profile";
 import Payment from "./pages/payment/Payment";
+import Error from "./components/layout/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ function App() {
           <ScrollToTop />
         </AppContextProvider>
       ),
+      errorElement: <Error />,
       children: [
         {
           path: "/",
