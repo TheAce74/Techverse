@@ -51,8 +51,7 @@ function Payment() {
     event.preventDefault();
     const paystack = new PaystackPop();
     paystack.newTransaction({
-      key: "pk_test_3b2ea55e88dda1689ca3a079e7327733683a6135",
-      // key: import.meta.env.VITE_KEY,
+      key: import.meta.env.VITE_KEY,
       amount:
         Number(
           recordRef.current.ticket.slice(
