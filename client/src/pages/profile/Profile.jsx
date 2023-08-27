@@ -7,11 +7,10 @@ import { useAuthentication } from "../../hooks/useAuthentication";
 import { BiSolidPencil } from "react-icons/bi";
 import Modal from "react-modal";
 import Swal from "sweetalert2";
-// import { fetchData } from "../../utils/fetchData";
 import axios from "axios";
 
 function Profile() {
-  const { user, setLoader } = useAppContext();
+  const { user, setLoader, addUser } = useAppContext();
   const { logout } = useAuthentication();
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -20,13 +19,14 @@ function Profile() {
 
   Modal.setAppElement("#root");
 
+  const handleCloseModal = (bool) => {
+    setModalIsOpen(bool);
+    setImageSrc(user.image);
+  };
+
   const handleUpload = (event) => {
     event.preventDefault();
-    // the image is stored in the user object property called photo_url, that is user.photo_url
-    // now to access the image, we use https://techverse-v2.onrender.com/fileinfo/{photo_url}
-    // for example, user.photo_url: "yotalk1693078936905n.jfif"
-    // <img src={https://techverse-v2.onrender.com/fileinfo/yotalk1693078936905n.jfif} alt="" />
-
+    setLoader(true);
     const image = imageRef.current.files[0];
     const url = "https://techverse-v2.onrender.com/user/upload";
     const config = {
@@ -39,11 +39,24 @@ function Profile() {
     formData.append("file", image);
     axios
       .post(url, formData, config)
-      .then(() => {
-        console.log("pfp updated");
+      .then((response) => {
+        addUser({
+          ...user,
+          image: `https://techverse-v2.onrender.com/fileinfo/${response.data.file.filename}`,
+        });
+        handleCloseModal(false);
+        setLoader(false);
       })
-      .catch((err) => console.log({ err }));
-    setModalIsOpen(false);
+      .catch((err) => {
+        setLoader(false);
+        Swal.fire({
+          title: "Failed!",
+          text: err.message,
+          icon: "error",
+          confirmButtonText: "Try again",
+          confirmButtonColor: "var(--clr-secondary-400)",
+        });
+      });
   };
 
   const validFileType = (file) => {
@@ -105,7 +118,7 @@ function Profile() {
                   {user.username[0]?.toUpperCase()}
                 </span>
               )}
-              <button onClick={() => setModalIsOpen(true)}>
+              <button onClick={() => handleCloseModal(true)}>
                 <BiSolidPencil />
               </button>
             </span>
@@ -119,7 +132,7 @@ function Profile() {
         </div>
         <Modal
           isOpen={modalIsOpen}
-          onRequestClose={() => setModalIsOpen(false)}
+          onRequestClose={() => handleCloseModal(false)}
           style={{
             content: {
               top: "50%",

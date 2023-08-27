@@ -1,10 +1,11 @@
+@use "../../abstracts" as *;
 @use "../../base" as *;
 
 .profile {
   padding: 2em 1.5em;
 
   .wrapper {
-    width: max(35%, 35ch);
+    width: max(50%, 28ch);
     margin-inline: auto;
 
     & > div:first-child {
@@ -102,7 +103,7 @@
     }
 
     & > p {
-      width: max(35ch, 35%);
+      width: max(90%, 28ch);
       background-color: var(--clr-neutral-200);
       border-radius: 0.5em;
       padding: 1em 2em;
@@ -124,6 +125,14 @@
       button {
         margin-top: 0.5em;
       }
+    }
+  }
+
+  @include max(small) {
+    h1,
+    h2,
+    h3 {
+      font-size: 1.25rem;
     }
   }
 }

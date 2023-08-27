@@ -43,6 +43,9 @@ function useAuthentication() {
           seat_number: data.user?.seat_number || 0,
           ticket_id: data.user?.ticket_id || "",
           ticket_type: data.user?.ticket_type || "",
+          image: data.user?.photo_url
+            ? `https://techverse-v2.onrender.com/fileinfo/${data.user.photo_url}`
+            : "",
         });
         navigate("/profile");
       } else {

@@ -48,11 +48,36 @@ function ResetPassword() {
         confirmButtonColor: "var(--clr-secondary-400)",
       });
     } else {
-      //this is where the reset password fetch logic is
-      fetchData("reset", "post", {
+      fetchData("forgotpassword", "post", {
         email: emailRef.current.value,
-        old_password: oldPasswordRef.current.value,
-        new_password: password1Ref.current.value,
+        password: password1Ref.current.value,
+      }).then((data) => {
+        if (data.message) {
+          Swal.fire({
+            title: "Success",
+            text: data.message,
+            icon: "success",
+            confirmButtonText: "Continue",
+            confirmButtonColor: "var(--clr-secondary-400)",
+          }).then(() => {
+            event.target.reset();
+            navigate("/login");
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: data.error,
+            icon: "error",
+            confirmButtonText: "Try again",
+            confirmButtonColor: "var(--clr-secondary-400)",
+          });
+        }
+      });
+      Swal.fire({
+        title: "Info",
+        text: "Please wait a moment...",
+        icon: "info",
+        showConfirmButton: false,
       });
     }
   };
