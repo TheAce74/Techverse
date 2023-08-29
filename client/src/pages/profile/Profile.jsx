@@ -180,7 +180,7 @@ function Profile() {
           <div>
             <h3>You&apos;ve not secured your spot yet?</h3>
             <Link to="/payment">
-              <Button color="secondary">Purchase ticket</Button>
+              <Button color="secondary">Buy ticket</Button>
             </Link>
           </div>
         )}

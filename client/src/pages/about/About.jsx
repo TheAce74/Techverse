@@ -55,7 +55,9 @@ function About() {
               <Button color="secondary">Get Ticket</Button>
             </Link>
           ) : (
-            ""
+            <Link to="/profile">
+              <Button color="secondary">Your Profile</Button>
+            </Link>
           )}
         </motion.section>
       )}
